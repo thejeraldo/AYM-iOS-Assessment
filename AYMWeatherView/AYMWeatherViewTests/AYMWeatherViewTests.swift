@@ -88,6 +88,20 @@ class AYMWeatherViewTests: XCTestCase {
     wait(for: [ expectation ], timeout: 60)
   }
   
+  func testWeatherViewAPIRequest() {
+    let expectation = XCTestExpectation(description: "Weather View API Request")
+    
+    let weatherView = AYMWeatherView(apiKey: apiKey, units: .celsius)
+    weatherView.downloadWeather(coord: coord) { (weatherForecast, error) in
+      print("")
+      XCTAssertNotNil(weatherForecast?.weather, "Weather View Weather is nil.")
+      XCTAssert(weatherForecast?.forecast?.list?.count == 40, "Weather View Forecast list count is not 40.")
+      expectation.fulfill()
+    }
+    
+    wait(for: [ expectation ], timeout: 60)
+  }
+  
   func testPerformanceExample() {
     // This is an example of a performance test case.
     self.measure {

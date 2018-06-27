@@ -81,3 +81,35 @@ open class AYMWeatherView: UIView {
     windLabel.text = "--"
   }
 }
+
+// MARK: - Requests
+
+extension AYMWeatherView {
+  
+  public typealias weatherCompletion = (_ weather: WeatherForecast?, _ error: Error?) -> ()
+  
+  public func downloadWeather(coord: CLLocationCoordinate2D, completion: @escaping weatherCompletion) {
+    assert(apiKey.isEmpty == false, "Please provide an API key.")
+    
+    let api = WeatherAPI()
+    var weather: Weather? = nil
+    var forecast: Forecast? = nil
+    api.getWeather(apiKey: apiKey, coordinates: coord) { (weatherForecast, error) in
+      guard error == nil else {
+        print("Error downloading weather. \(error!)")
+        return
+      }
+      weather = weatherForecast
+      
+      api.getForecast(apiKey: self.apiKey, coordinates: coord, completion: { (forecastResult, error) in
+        guard error == nil else {
+          print("Error downloading forecast. \(error!)")
+          return
+        }
+        forecast = forecastResult
+        let weatherForecast = WeatherForecast(weather: weather, forecast: forecast)
+        completion(weatherForecast, nil)
+      })
+    }
+  }
+}

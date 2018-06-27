@@ -14,6 +14,9 @@
 		F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5020E4058200570C99 /* AYMWeatherView.swift */; };
 		F85D4D5A20E416B900570C99 /* AYMWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D5920E416B900570C99 /* AYMWeatherView.xib */; };
 		F85D4D5C20E4177000570C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D5B20E4177000570C99 /* Assets.xcassets */; };
+		F85D4D6020E41DAE00570C99 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */; };
+		F85D4D6320E41DEB00570C99 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */; };
+		F85D4D6420E41DEC00570C99 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6220E41DEB00570C99 /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		F85D4D5020E4058200570C99 /* AYMWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMWeatherView.swift; sourceTree = "<group>"; };
 		F85D4D5920E416B900570C99 /* AYMWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AYMWeatherView.xib; sourceTree = "<group>"; };
 		F85D4D5B20E4177000570C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
+		F85D4D6220E41DEB00570C99 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		F85D4D3520E3FFB000570C99 /* AYMWeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				F85D4D5E20E41DA000570C99 /* Weather API */,
 				F85D4D4D20E400AE00570C99 /* Model */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
 				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
@@ -104,6 +111,16 @@
 				F85D4D4E20E400CB00570C99 /* WeatherModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F85D4D5E20E41DA000570C99 /* Weather API */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */,
+				F85D4D6220E41DEB00570C99 /* NetworkClient.swift */,
+				F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */,
+			);
+			path = "Weather API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D4D6320E41DEB00570C99 /* EndPointProtocol.swift in Sources */,
+				F85D4D6420E41DEC00570C99 /* NetworkClient.swift in Sources */,
+				F85D4D6020E41DAE00570C99 /* WeatherAPI.swift in Sources */,
 				F85D4D4F20E400CB00570C99 /* WeatherModel.swift in Sources */,
 				F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */,
 			);
