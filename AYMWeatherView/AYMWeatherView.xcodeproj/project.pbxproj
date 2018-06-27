@@ -12,6 +12,8 @@
 		F85D4D4420E3FFB000570C99 /* AYMWeatherView.h in Headers */ = {isa = PBXBuildFile; fileRef = F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F85D4D4F20E400CB00570C99 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D4E20E400CB00570C99 /* WeatherModel.swift */; };
 		F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5020E4058200570C99 /* AYMWeatherView.swift */; };
+		F85D4D5A20E416B900570C99 /* AYMWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D5920E416B900570C99 /* AYMWeatherView.xib */; };
+		F85D4D5C20E4177000570C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D5B20E4177000570C99 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		F85D4D4320E3FFB000570C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85D4D4E20E400CB00570C99 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F85D4D5020E4058200570C99 /* AYMWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMWeatherView.swift; sourceTree = "<group>"; };
+		F85D4D5920E416B900570C99 /* AYMWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AYMWeatherView.xib; sourceTree = "<group>"; };
+		F85D4D5B20E4177000570C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 				F85D4D4D20E400AE00570C99 /* Model */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
 				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
+				F85D4D5920E416B900570C99 /* AYMWeatherView.xib */,
 				F85D4D3720E3FFB000570C99 /* Info.plist */,
+				F85D4D5B20E4177000570C99 /* Assets.xcassets */,
 			);
 			path = AYMWeatherView;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D4D5C20E4177000570C99 /* Assets.xcassets in Resources */,
+				F85D4D5A20E416B900570C99 /* AYMWeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

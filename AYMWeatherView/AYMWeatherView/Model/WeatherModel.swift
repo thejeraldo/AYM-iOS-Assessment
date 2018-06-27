@@ -8,11 +8,19 @@
 
 import Foundation
 
-struct Forecast: Codable {
+public struct WeatherForecast {
+  var weather: Weather?
+  var forecast: Forecast?
+  var date: Date? {
+    return self.weather?.date
+  }
+}
+
+public struct Forecast: Codable {
   let list: [Weather]?
 }
 
-struct Weather: Codable {
+public struct Weather: Codable {
   let weatherDetails: [WeatherDetails]?
   let main: Main?
   let wind: Wind?
@@ -28,7 +36,7 @@ struct Weather: Codable {
   }
 }
 
-struct WeatherDetails: Codable {
+public struct WeatherDetails: Codable {
   let id: Int?
   let main: String?
   let weatherDescription: String?
@@ -42,7 +50,7 @@ struct WeatherDetails: Codable {
   }
 }
 
-struct Main: Codable {
+public struct Main: Codable {
   let temp: Double?
   let temp_min: Double?
   let temp_max: Double?
