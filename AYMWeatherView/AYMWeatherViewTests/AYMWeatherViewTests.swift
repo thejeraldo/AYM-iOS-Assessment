@@ -44,13 +44,42 @@ class AYMWeatherViewTests: XCTestCase {
       decoder.dateDecodingStrategy = .secondsSince1970
       let weather = try? decoder.decode(Weather.self, from: data!)
       
-      XCTAssertNotNil(weather, "Weather must not be nil.")
-      XCTAssertNotNil(weather?.weatherDetails?.first?.id, "Weather id must not be nil.")
-      XCTAssertNotNil(weather?.weatherDetails?.first?.main, "Weather main must not be nil.")
-      XCTAssertNotNil(weather?.main?.temp, "Weather main temp must not be nil.")
-      XCTAssertNotNil(weather?.main?.temp_max, "Weather temp max must not be nil.")
-      XCTAssertNotNil(weather?.main?.temp_min, "Weather temp min must not be nil.")
-      XCTAssertNotNil(weather?.date, "Weather date must not be nil.")
+      XCTAssertNotNil(weather, "Weather is nil.")
+      XCTAssertNotNil(weather?.weatherDetails?.first?.id, "Weather id is nil.")
+      XCTAssertNotNil(weather?.weatherDetails?.first?.main, "Weather main is nil.")
+      XCTAssertNotNil(weather?.main?.temp, "Weather main temp is nil.")
+      XCTAssertNotNil(weather?.main?.temp_max, "Weather temp max is nil.")
+      XCTAssertNotNil(weather?.main?.temp_min, "Weather temp min is nil.")
+      XCTAssertNotNil(weather?.date, "Weather date is nil.")
+      
+      expectation.fulfill()
+    }
+    dataTask.resume()
+    
+    wait(for: [ expectation ], timeout: 60)
+  }
+  
+  func testForecast() {
+    let expectation = XCTestExpectation(description: "Forecast Request")
+    
+    let urlString = "\(baseURL)/forecast?APPID=\(apiKey)&lat=\(coord.latitude)&lon=\(coord.longitude)"
+    let url = URL(string: urlString)
+    let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+      guard error == nil else {
+        print("Error \(error!)")
+        expectation.fulfill()
+        return
+      }
+      
+      XCTAssertNotNil(data, "Response data is nil.")
+      
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .secondsSince1970
+      let forecast = try? decoder.decode(Forecast.self, from: data!)
+      
+      XCTAssertNotNil(forecast, "Forecast is nil.")
+      XCTAssert(forecast?.list != nil, "Forecast list is nil.")
+      XCTAssert(forecast?.list?.count == 40, "Forecast list count is not 40.")
       
       expectation.fulfill()
     }
