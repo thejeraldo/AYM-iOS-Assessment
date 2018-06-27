@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AYM iOS Assessment/AYM iOS Assessment.xcodeproj">
+      location = "self:AYM iOS Assessment.xcodeproj">
    </FileRef>
 </Workspace>
