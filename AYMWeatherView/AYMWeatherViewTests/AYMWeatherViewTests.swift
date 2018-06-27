@@ -7,30 +7,62 @@
 //
 
 import XCTest
+import CoreLocation
 @testable import AYMWeatherView
 
 class AYMWeatherViewTests: XCTestCase {
+  
+  let baseURL: String = "https://api.openweathermap.org/data/2.5"
+  let apiKey: String = "a052106f5d60e7b1389d825128d90275"
+  let coord: CLLocationCoordinate2D = CLLocationCoordinate2DMake(24.2048, 55.2708)
+  
+  override func setUp() {
+    super.setUp()
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+  }
+  
+  override func tearDown() {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    super.tearDown()
+  }
+  
+  func testWeatherAPI() {
+    let expectation = XCTestExpectation(description: "Weather Request")
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let urlString = "\(baseURL)/weather?APPID=\(apiKey)&lat=\(coord.latitude)&lon=\(coord.longitude)"
+    let url = URL(string: urlString)
+    let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+      guard error == nil else {
+        print("Error \(error!)")
+        expectation.fulfill()
+        return
+      }
+      
+      XCTAssertNotNil(data, "Response data must not be nil.")
+      
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .secondsSince1970
+      let weather = try? decoder.decode(Weather.self, from: data!)
+      
+      XCTAssertNotNil(weather, "Weather must not be nil.")
+      XCTAssertNotNil(weather?.weatherDetails?.first?.id, "Weather id must not be nil.")
+      XCTAssertNotNil(weather?.weatherDetails?.first?.main, "Weather main must not be nil.")
+      XCTAssertNotNil(weather?.main?.temp, "Weather main temp must not be nil.")
+      XCTAssertNotNil(weather?.main?.temp_max, "Weather temp max must not be nil.")
+      XCTAssertNotNil(weather?.main?.temp_min, "Weather temp min must not be nil.")
+      XCTAssertNotNil(weather?.date, "Weather date must not be nil.")
+      
+      expectation.fulfill()
     }
+    dataTask.resume()
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    wait(for: [ expectation ], timeout: 60)
+  }
+  
+  func testPerformanceExample() {
+    // This is an example of a performance test case.
+    self.measure {
+      // Put the code you want to measure the time of here.
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+  }
 }

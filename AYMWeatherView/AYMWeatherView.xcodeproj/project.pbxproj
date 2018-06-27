@@ -10,6 +10,8 @@
 		F85D4D3D20E3FFB000570C99 /* AYMWeatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D3320E3FFB000570C99 /* AYMWeatherView.framework */; };
 		F85D4D4220E3FFB000570C99 /* AYMWeatherViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D4120E3FFB000570C99 /* AYMWeatherViewTests.swift */; };
 		F85D4D4420E3FFB000570C99 /* AYMWeatherView.h in Headers */ = {isa = PBXBuildFile; fileRef = F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F85D4D4F20E400CB00570C99 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D4E20E400CB00570C99 /* WeatherModel.swift */; };
+		F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5020E4058200570C99 /* AYMWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		F85D4D3C20E3FFB000570C99 /* AYMWeatherViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AYMWeatherViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4D4120E3FFB000570C99 /* AYMWeatherViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMWeatherViewTests.swift; sourceTree = "<group>"; };
 		F85D4D4320E3FFB000570C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85D4D4E20E400CB00570C99 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F85D4D5020E4058200570C99 /* AYMWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,9 @@
 		F85D4D3520E3FFB000570C99 /* AYMWeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				F85D4D4D20E400AE00570C99 /* Model */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
+				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
 				F85D4D3720E3FFB000570C99 /* Info.plist */,
 			);
 			path = AYMWeatherView;
@@ -84,6 +90,14 @@
 				F85D4D4320E3FFB000570C99 /* Info.plist */,
 			);
 			path = AYMWeatherViewTests;
+			sourceTree = "<group>";
+		};
+		F85D4D4D20E400AE00570C99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D4E20E400CB00570C99 /* WeatherModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,7 @@
 				TargetAttributes = {
 					F85D4D3220E3FFB000570C99 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					F85D4D3B20E3FFB000570C99 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -194,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D4D4F20E400CB00570C99 /* WeatherModel.swift in Sources */,
+				F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +356,7 @@
 		F85D4D4820E3FFB000570C99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.AYMWeatherView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -365,6 +384,7 @@
 		F85D4D4920E3FFB000570C99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +411,7 @@
 		F85D4D4B20E3FFB000570C99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
 				INFOPLIST_FILE = AYMWeatherViewTests/Info.plist;
@@ -409,6 +430,7 @@
 		F85D4D4C20E3FFB000570C99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
 				INFOPLIST_FILE = AYMWeatherViewTests/Info.plist;
