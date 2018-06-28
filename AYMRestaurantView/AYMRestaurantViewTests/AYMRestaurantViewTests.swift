@@ -30,21 +30,12 @@ class AYMRestaurantViewTests: XCTestCase {
   
   func testGeocodeAPI() {
     let expectation = XCTestExpectation(description: "Geocode API")
-  
-    let url = URL(string: baseURL)?.appendingPathComponent("geocode")
-    let params = [
-      "lat": "\(coord.latitude)",
-      "lon": "\(coord.longitude)",
-    ]
-    let headers = [
-      "user-key": apiKey
-    ]
     
-    NetworkClient.fetch(url: url!, method: .GET, parameters: params, headers: headers, responseType: GeoCode.self) { (geocode, error) in
+    let api = RestaurantAPI(apiKey: apiKey)
+    api.geocode(coord: coord) { (geocode, error) in
       guard error == nil else {
         return
       }
-      
       XCTAssert(geocode?.location != nil, "Location is nil.")
       expectation.fulfill()
     }
@@ -55,36 +46,18 @@ class AYMRestaurantViewTests: XCTestCase {
   func testSearchAPI() {
     let expectation = XCTestExpectation(description: "Search API")
     
-    let url = URL(string: baseURL)?.appendingPathComponent("search")
-    let params = [
-      "count": "3",
-      "radius": "100",
-      "sort": "rating",
-      "order": "desc",
-      "entity_id": entityId,
-      "entity_type": entityType,
-      "lat": "\(coord.latitude)",
-      "lon": "\(coord.longitude)",
-    ]
-    let headers = [
-      "user-key": apiKey
-    ]
-    
-    NetworkClient.fetch(url: url!, method: HTTPMethod.GET, parameters: params, headers: headers, responseType: RestaurantSearch.self) { (searchResults, error) in
+    let api = RestaurantAPI(apiKey: apiKey)
+    api.search(coord: coord, entityId: entityId, entityType: entityType) { (searchResults, error) in
       guard error == nil else {
         return
       }
-      
-      XCTAssert(searchResults?.restaurants != nil, "Location is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.name != nil, "Location name is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.thumb != nil, "Location thumb is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.location?.city != nil, "Location city is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.cuisines != nil, "Location cuisines is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.userRating?.aggregateRating != nil, "Location ratings is nil.")
-      XCTAssert(searchResults?.restaurants?.first?.details?.userRating?.votes != nil, "Location votes is nil.")
-      
-      XCTAssert(searchResults?.restaurants?.first?.details?.thumb != nil, "Location is nil.")
-      
+      XCTAssert(searchResults?.restaurants != nil, "Restaurants is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.name != nil, "Restaurant name is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.thumb != nil, "Restaurant thumb is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.location?.city != nil, "Restaurant city is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.cuisines != nil, "Restaurant cuisines is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.userRating?.aggregateRating != nil, "Restaurant ratings is nil.")
+      XCTAssert(searchResults?.restaurants?.first?.details?.userRating?.votes != nil, "Restaurant votes is nil.")
       expectation.fulfill()
     }
     

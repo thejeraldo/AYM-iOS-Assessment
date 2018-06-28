@@ -48,7 +48,7 @@ extension RestaurantAPI {
   }
   
   func search(coord: CLLocationCoordinate2D, entityId: String, entityType: String, completion: @escaping searchCompletion) {
-    let url = baseURL.appendingPathComponent("geocode")
+    let url = baseURL.appendingPathComponent("search")
     let params: [String: String] = [
       "lat": "\(coord.latitude)",
       "lon": "\(coord.longitude)",
