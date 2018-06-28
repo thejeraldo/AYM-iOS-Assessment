@@ -22,6 +22,7 @@
                 <outlet property="tableView" destination="3eF-N6-DsL" id="pwf-Fq-R9e"/>
                 <outlet property="temperatureLabel" destination="9R4-hk-Uoz" id="etL-Uk-64N"/>
                 <outlet property="unitsLabel" destination="yVU-Iv-vXx" id="0x8-Yg-wJ9"/>
+                <outlet property="weatherViewContainer" destination="MIo-ts-QFh" id="leQ-Wg-yZN"/>
                 <outlet property="windLabel" destination="1vy-A2-q6b" id="iHr-Tf-Qug"/>
             </connections>
         </placeholder>

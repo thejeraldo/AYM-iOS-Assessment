@@ -16,7 +16,7 @@ enum HTTPMethod: String {
   case DELETE = "DELETE"
 }
 
-struct NetworkClient {
+public struct NetworkClient {
   static func fetch<T: Codable>(url: URL, method: HTTPMethod, parameters: [String: String]?, responseType: T.Type, completion: @escaping (_ t: T?, _ error: Error?) -> ()) {
     var urlComponents = URLComponents(string: url.absoluteString)
     var queryItems = [URLQueryItem]()

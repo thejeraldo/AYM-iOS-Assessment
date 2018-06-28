@@ -91,8 +91,8 @@ class AYMWeatherViewTests: XCTestCase {
   func testWeatherViewAPIRequest() {
     let expectation = XCTestExpectation(description: "Weather View API Request")
     
-    let weatherView = AYMWeatherView(apiKey: apiKey, units: .celsius)
-    weatherView.downloadWeather(coord: coord) { (weatherForecast, error) in
+    let weatherView = AYMWeatherView(apiKey: apiKey)
+    weatherView.downloadWeather(coord: coord) { (error) in
       print("")
       XCTAssertNotNil(weatherForecast?.weather, "Weather View Weather is nil.")
       XCTAssert(weatherForecast?.forecast?.list?.count == 40, "Weather View Forecast list count is not 40.")

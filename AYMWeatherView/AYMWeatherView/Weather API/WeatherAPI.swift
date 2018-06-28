@@ -11,6 +11,8 @@ import CoreLocation
 
 struct WeatherAPI { }
 
+// MARK: - End Point
+
 extension WeatherAPI: EndPointProtocol {
   var baseURL: URL {
     return URL(string: "https://api.openweathermap.org/data/2.5")!

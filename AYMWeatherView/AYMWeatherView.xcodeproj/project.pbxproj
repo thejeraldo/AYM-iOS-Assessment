@@ -17,6 +17,10 @@
 		F85D4D6020E41DAE00570C99 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */; };
 		F85D4D6320E41DEB00570C99 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */; };
 		F85D4D6420E41DEC00570C99 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6220E41DEB00570C99 /* NetworkClient.swift */; };
+		F85D4D6620E425EB00570C99 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6520E425EB00570C99 /* ForecastCollectionViewCell.swift */; };
+		F85D4D6820E4262200570C99 /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D6720E4262200570C99 /* ForecastCollectionViewCell.xib */; };
+		F85D4D6B20E4288E00570C99 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6A20E4288E00570C99 /* Extensions.swift */; };
+		F85D4D6E20E429B300570C99 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D6D20E429B300570C99 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
 		F85D4D6220E41DEB00570C99 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F85D4D6520E425EB00570C99 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		F85D4D6720E4262200570C99 /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		F85D4D6A20E4288E00570C99 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F85D4D6D20E429B300570C99 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +93,15 @@
 		F85D4D3520E3FFB000570C99 /* AYMWeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				F85D4D6C20E429A700570C99 /* ViewModel */,
+				F85D4D6920E4288300570C99 /* Extensions */,
 				F85D4D5E20E41DA000570C99 /* Weather API */,
 				F85D4D4D20E400AE00570C99 /* Model */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
 				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
 				F85D4D5920E416B900570C99 /* AYMWeatherView.xib */,
+				F85D4D6520E425EB00570C99 /* ForecastCollectionViewCell.swift */,
+				F85D4D6720E4262200570C99 /* ForecastCollectionViewCell.xib */,
 				F85D4D3720E3FFB000570C99 /* Info.plist */,
 				F85D4D5B20E4177000570C99 /* Assets.xcassets */,
 			);
@@ -121,6 +133,22 @@
 				F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */,
 			);
 			path = "Weather API";
+			sourceTree = "<group>";
+		};
+		F85D4D6920E4288300570C99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D6A20E4288E00570C99 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F85D4D6C20E429A700570C99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D6D20E429B300570C99 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85D4D5C20E4177000570C99 /* Assets.xcassets in Resources */,
+				F85D4D6820E4262200570C99 /* ForecastCollectionViewCell.xib in Resources */,
 				F85D4D5A20E416B900570C99 /* AYMWeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,7 +265,10 @@
 			files = (
 				F85D4D6320E41DEB00570C99 /* EndPointProtocol.swift in Sources */,
 				F85D4D6420E41DEC00570C99 /* NetworkClient.swift in Sources */,
+				F85D4D6B20E4288E00570C99 /* Extensions.swift in Sources */,
+				F85D4D6620E425EB00570C99 /* ForecastCollectionViewCell.swift in Sources */,
 				F85D4D6020E41DAE00570C99 /* WeatherAPI.swift in Sources */,
+				F85D4D6E20E429B300570C99 /* WeatherViewModel.swift in Sources */,
 				F85D4D4F20E400CB00570C99 /* WeatherModel.swift in Sources */,
 				F85D4D5120E4058200570C99 /* AYMWeatherView.swift in Sources */,
 			);

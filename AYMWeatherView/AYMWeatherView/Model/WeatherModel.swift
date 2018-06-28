@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct WeatherForecast {
+struct WeatherForecast {
   var weather: Weather?
   var forecast: Forecast?
   var date: Date? {
@@ -16,11 +16,43 @@ public struct WeatherForecast {
   }
 }
 
-public struct Forecast: Codable {
+struct Forecast: Codable {
   let list: [Weather]?
+  func fiveDayForecast() -> [DailyForecast]? {
+    var forecast = [DailyForecast]()
+    if let list = self.list {
+      let chunks = list.chunks((self.list?.count)! / 5)
+      for group in chunks {
+        var maxTemp = 0.0
+        var minTemp = Double.greatestFiniteMagnitude
+        for weather in group {
+          let temp_max = weather.main?.temp_max
+          let temp_min = weather.main?.temp_min
+          if temp_max! > maxTemp {
+            maxTemp = temp_max!
+          }
+          if temp_min! < minTemp {
+            minTemp = temp_min!
+          }
+        }
+        let date = group.last?.date
+        let condition = group.last?.weatherDetails?.last?.id
+        let dailyForecast = DailyForecast(temp_min: minTemp, temp_max: maxTemp, date: date, condition: condition)
+        forecast.append(dailyForecast)
+      }
+    }
+    return forecast
+  }
 }
 
-public struct Weather: Codable {
+public struct DailyForecast {
+  public let temp_min: Double?
+  public let temp_max: Double?
+  public let date: Date?
+  public let condition: Int?
+}
+
+struct Weather: Codable {
   let weatherDetails: [WeatherDetails]?
   let main: Main?
   let wind: Wind?
@@ -36,7 +68,7 @@ public struct Weather: Codable {
   }
 }
 
-public struct WeatherDetails: Codable {
+struct WeatherDetails: Codable {
   let id: Int?
   let main: String?
   let weatherDescription: String?
@@ -50,7 +82,7 @@ public struct WeatherDetails: Codable {
   }
 }
 
-public struct Main: Codable {
+struct Main: Codable {
   let temp: Double?
   let temp_min: Double?
   let temp_max: Double?
