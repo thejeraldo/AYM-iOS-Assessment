@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F857EDBE20E4F1050055E1F9 /* Dubai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F857EDBD20E4F1020055E1F9 /* Dubai.gpx */; };
 		F85D4CFC20E3FE5300570C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */; };
 		F85D4D0120E3FE5300570C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85D4CFF20E3FE5300570C99 /* Main.storyboard */; };
 		F85D4D0320E3FE5700570C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D0220E3FE5700570C99 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F857EDBD20E4F1020055E1F9 /* Dubai.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Dubai.gpx; sourceTree = "<group>"; };
 		F85D4CF820E3FE5300570C99 /* AYM iOS Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AYM iOS Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F85D4D0020E3FE5300570C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				F857EDBD20E4F1020055E1F9 /* Dubai.gpx */,
 				F85D4D5620E4147600570C99 /* ViewControllers */,
 				F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */,
 				F85D4CFF20E3FE5300570C99 /* Main.storyboard */,
@@ -260,6 +263,7 @@
 				F85D4D0620E3FE5700570C99 /* LaunchScreen.storyboard in Resources */,
 				F85D4D0320E3FE5700570C99 /* Assets.xcassets in Resources */,
 				F85D4D0120E3FE5300570C99 /* Main.storyboard in Resources */,
+				F857EDBE20E4F1050055E1F9 /* Dubai.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -72,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F857EDB220E4E0C50055E1F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */,
+				F85D4D6220E41DEB00570C99 /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		F85D4D2920E3FFB000570C99 = {
 			isa = PBXGroup;
 			children = (
@@ -93,10 +102,11 @@
 		F85D4D3520E3FFB000570C99 /* AYMWeatherView */ = {
 			isa = PBXGroup;
 			children = (
-				F85D4D6C20E429A700570C99 /* ViewModel */,
 				F85D4D6920E4288300570C99 /* Extensions */,
+				F857EDB220E4E0C50055E1F9 /* Networking */,
 				F85D4D5E20E41DA000570C99 /* Weather API */,
 				F85D4D4D20E400AE00570C99 /* Model */,
+				F85D4D6C20E429A700570C99 /* ViewModel */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
 				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
 				F85D4D5920E416B900570C99 /* AYMWeatherView.xib */,
@@ -128,8 +138,6 @@
 		F85D4D5E20E41DA000570C99 /* Weather API */ = {
 			isa = PBXGroup;
 			children = (
-				F85D4D6120E41DEB00570C99 /* EndPointProtocol.swift */,
-				F85D4D6220E41DEB00570C99 /* NetworkClient.swift */,
 				F85D4D5F20E41DAE00570C99 /* WeatherAPI.swift */,
 			);
 			path = "Weather API";
