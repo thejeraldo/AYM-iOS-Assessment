@@ -7,223 +7,205 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F857EDA220E4E0770055E1F9 /* AYMRestaurantView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857ED9820E4E0770055E1F9 /* AYMRestaurantView.framework */; };
-		F857EDA720E4E0770055E1F9 /* AYMRestaurantViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDA620E4E0770055E1F9 /* AYMRestaurantViewTests.swift */; };
-		F857EDA920E4E0770055E1F9 /* AYMRestaurantView.h in Headers */ = {isa = PBXBuildFile; fileRef = F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */; };
-		F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */; };
-		F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2C20E8B0E10055E1F9 /* Common.framework */; };
+		F857EE1B20E8B0A30055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE1120E8B0A30055E1F9 /* Common.framework */; };
+		F857EE2020E8B0A30055E1F9 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE1F20E8B0A30055E1F9 /* CommonTests.swift */; };
+		F857EE2220E8B0A30055E1F9 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F857EE1420E8B0A30055E1F9 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F857EE3420E8B1240055E1F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE3220E8B1240055E1F9 /* NetworkClient.swift */; };
+		F857EE3520E8B1240055E1F9 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */; };
+		F857EE3820E8BD690055E1F9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE3720E8BD690055E1F9 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F857EDA320E4E0770055E1F9 /* PBXContainerItemProxy */ = {
+		F857EE1C20E8B0A30055E1F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F857ED8F20E4E0760055E1F9 /* Project object */;
+			containerPortal = F857EE0820E8B0A30055E1F9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F857ED9720E4E0770055E1F9;
-			remoteInfo = AYMRestaurantView;
+			remoteGlobalIDString = F857EE1020E8B0A30055E1F9;
+			remoteInfo = Common;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F857ED9820E4E0770055E1F9 /* AYMRestaurantView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AYMRestaurantView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AYMRestaurantView.h; sourceTree = "<group>"; };
-		F857ED9C20E4E0770055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F857EDA120E4E0770055E1F9 /* AYMRestaurantViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AYMRestaurantViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F857EDA620E4E0770055E1F9 /* AYMRestaurantViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMRestaurantViewTests.swift; sourceTree = "<group>"; };
-		F857EDA820E4E0770055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPI.swift; sourceTree = "<group>"; };
-		F857EE2C20E8B0E10055E1F9 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F857EE1120E8B0A30055E1F9 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F857EE1420E8B0A30055E1F9 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		F857EE1520E8B0A30055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F857EE1A20E8B0A30055E1F9 /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F857EE1F20E8B0A30055E1F9 /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
+		F857EE2120E8B0A30055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F857EE3220E8B1240055E1F9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
+		F857EE3720E8BD690055E1F9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F857ED9420E4E0770055E1F9 /* Frameworks */ = {
+		F857EE0D20E8B0A30055E1F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F857ED9E20E4E0770055E1F9 /* Frameworks */ = {
+		F857EE1720E8B0A30055E1F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EDA220E4E0770055E1F9 /* AYMRestaurantView.framework in Frameworks */,
+				F857EE1B20E8B0A30055E1F9 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F857ED8E20E4E0760055E1F9 = {
+		F857EE0720E8B0A30055E1F9 = {
 			isa = PBXGroup;
 			children = (
-				F857ED9A20E4E0770055E1F9 /* AYMRestaurantView */,
-				F857EDA520E4E0770055E1F9 /* AYMRestaurantViewTests */,
-				F857ED9920E4E0770055E1F9 /* Products */,
-				F857EE2B20E8B0E10055E1F9 /* Frameworks */,
+				F857EE1320E8B0A30055E1F9 /* Common */,
+				F857EE1E20E8B0A30055E1F9 /* CommonTests */,
+				F857EE1220E8B0A30055E1F9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F857ED9920E4E0770055E1F9 /* Products */ = {
+		F857EE1220E8B0A30055E1F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F857ED9820E4E0770055E1F9 /* AYMRestaurantView.framework */,
-				F857EDA120E4E0770055E1F9 /* AYMRestaurantViewTests.xctest */,
+				F857EE1120E8B0A30055E1F9 /* Common.framework */,
+				F857EE1A20E8B0A30055E1F9 /* CommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F857ED9A20E4E0770055E1F9 /* AYMRestaurantView */ = {
+		F857EE1320E8B0A30055E1F9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDB320E4E1470055E1F9 /* Model */,
-				F857EDB420E4E1470055E1F9 /* Restaurants API */,
-				F857EDB520E4E1470055E1F9 /* ViewModel */,
-				F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */,
-				F857ED9C20E4E0770055E1F9 /* Info.plist */,
+				F857EE3620E8BD5A0055E1F9 /* Extensions */,
+				F857EE3120E8B1240055E1F9 /* Networking */,
+				F857EE1420E8B0A30055E1F9 /* Common.h */,
+				F857EE1520E8B0A30055E1F9 /* Info.plist */,
 			);
-			path = AYMRestaurantView;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		F857EDA520E4E0770055E1F9 /* AYMRestaurantViewTests */ = {
+		F857EE1E20E8B0A30055E1F9 /* CommonTests */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDA620E4E0770055E1F9 /* AYMRestaurantViewTests.swift */,
-				F857EDA820E4E0770055E1F9 /* Info.plist */,
+				F857EE1F20E8B0A30055E1F9 /* CommonTests.swift */,
+				F857EE2120E8B0A30055E1F9 /* Info.plist */,
 			);
-			path = AYMRestaurantViewTests;
+			path = CommonTests;
 			sourceTree = "<group>";
 		};
-		F857EDB320E4E1470055E1F9 /* Model */ = {
+		F857EE3120E8B1240055E1F9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */,
+				F857EE3220E8B1240055E1F9 /* NetworkClient.swift */,
+				F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */,
 			);
-			path = Model;
+			path = Networking;
 			sourceTree = "<group>";
 		};
-		F857EDB420E4E1470055E1F9 /* Restaurants API */ = {
+		F857EE3620E8BD5A0055E1F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */,
+				F857EE3720E8BD690055E1F9 /* Extensions.swift */,
 			);
-			path = "Restaurants API";
-			sourceTree = "<group>";
-		};
-		F857EDB520E4E1470055E1F9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F857EE2B20E8B0E10055E1F9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F857EE2C20E8B0E10055E1F9 /* Common.framework */,
-			);
-			name = Frameworks;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F857ED9520E4E0770055E1F9 /* Headers */ = {
+		F857EE0E20E8B0A30055E1F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EDA920E4E0770055E1F9 /* AYMRestaurantView.h in Headers */,
+				F857EE2220E8B0A30055E1F9 /* Common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F857ED9720E4E0770055E1F9 /* AYMRestaurantView */ = {
+		F857EE1020E8B0A30055E1F9 /* Common */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F857EDAC20E4E0770055E1F9 /* Build configuration list for PBXNativeTarget "AYMRestaurantView" */;
+			buildConfigurationList = F857EE2520E8B0A30055E1F9 /* Build configuration list for PBXNativeTarget "Common" */;
 			buildPhases = (
-				F857ED9320E4E0770055E1F9 /* Sources */,
-				F857ED9420E4E0770055E1F9 /* Frameworks */,
-				F857ED9520E4E0770055E1F9 /* Headers */,
-				F857ED9620E4E0770055E1F9 /* Resources */,
+				F857EE0C20E8B0A30055E1F9 /* Sources */,
+				F857EE0D20E8B0A30055E1F9 /* Frameworks */,
+				F857EE0E20E8B0A30055E1F9 /* Headers */,
+				F857EE0F20E8B0A30055E1F9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AYMRestaurantView;
-			productName = AYMRestaurantView;
-			productReference = F857ED9820E4E0770055E1F9 /* AYMRestaurantView.framework */;
+			name = Common;
+			productName = Common;
+			productReference = F857EE1120E8B0A30055E1F9 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F857EDA020E4E0770055E1F9 /* AYMRestaurantViewTests */ = {
+		F857EE1920E8B0A30055E1F9 /* CommonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F857EDAF20E4E0770055E1F9 /* Build configuration list for PBXNativeTarget "AYMRestaurantViewTests" */;
+			buildConfigurationList = F857EE2820E8B0A30055E1F9 /* Build configuration list for PBXNativeTarget "CommonTests" */;
 			buildPhases = (
-				F857ED9D20E4E0770055E1F9 /* Sources */,
-				F857ED9E20E4E0770055E1F9 /* Frameworks */,
-				F857ED9F20E4E0770055E1F9 /* Resources */,
+				F857EE1620E8B0A30055E1F9 /* Sources */,
+				F857EE1720E8B0A30055E1F9 /* Frameworks */,
+				F857EE1820E8B0A30055E1F9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F857EDA420E4E0770055E1F9 /* PBXTargetDependency */,
+				F857EE1D20E8B0A30055E1F9 /* PBXTargetDependency */,
 			);
-			name = AYMRestaurantViewTests;
-			productName = AYMRestaurantViewTests;
-			productReference = F857EDA120E4E0770055E1F9 /* AYMRestaurantViewTests.xctest */;
+			name = CommonTests;
+			productName = CommonTests;
+			productReference = F857EE1A20E8B0A30055E1F9 /* CommonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F857ED8F20E4E0760055E1F9 /* Project object */ = {
+		F857EE0820E8B0A30055E1F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = thejeraldo;
 				TargetAttributes = {
-					F857ED9720E4E0770055E1F9 = {
+					F857EE1020E8B0A30055E1F9 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
 					};
-					F857EDA020E4E0770055E1F9 = {
+					F857EE1920E8B0A30055E1F9 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = F857ED9220E4E0760055E1F9 /* Build configuration list for PBXProject "AYMRestaurantView" */;
+			buildConfigurationList = F857EE0B20E8B0A30055E1F9 /* Build configuration list for PBXProject "Common" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F857ED8E20E4E0760055E1F9;
-			productRefGroup = F857ED9920E4E0770055E1F9 /* Products */;
+			mainGroup = F857EE0720E8B0A30055E1F9;
+			productRefGroup = F857EE1220E8B0A30055E1F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F857ED9720E4E0770055E1F9 /* AYMRestaurantView */,
-				F857EDA020E4E0770055E1F9 /* AYMRestaurantViewTests */,
+				F857EE1020E8B0A30055E1F9 /* Common */,
+				F857EE1920E8B0A30055E1F9 /* CommonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F857ED9620E4E0770055E1F9 /* Resources */ = {
+		F857EE0F20E8B0A30055E1F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F857ED9F20E4E0770055E1F9 /* Resources */ = {
+		F857EE1820E8B0A30055E1F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,35 +215,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F857ED9320E4E0770055E1F9 /* Sources */ = {
+		F857EE0C20E8B0A30055E1F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */,
-				F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */,
+				F857EE3520E8B1240055E1F9 /* EndPointProtocol.swift in Sources */,
+				F857EE3820E8BD690055E1F9 /* Extensions.swift in Sources */,
+				F857EE3420E8B1240055E1F9 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F857ED9D20E4E0770055E1F9 /* Sources */ = {
+		F857EE1620E8B0A30055E1F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EDA720E4E0770055E1F9 /* AYMRestaurantViewTests.swift in Sources */,
+				F857EE2020E8B0A30055E1F9 /* CommonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F857EDA420E4E0770055E1F9 /* PBXTargetDependency */ = {
+		F857EE1D20E8B0A30055E1F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F857ED9720E4E0770055E1F9 /* AYMRestaurantView */;
-			targetProxy = F857EDA320E4E0770055E1F9 /* PBXContainerItemProxy */;
+			target = F857EE1020E8B0A30055E1F9 /* Common */;
+			targetProxy = F857EE1C20E8B0A30055E1F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		F857EDAA20E4E0770055E1F9 /* Debug */ = {
+		F857EE2320E8B0A30055E1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		F857EDAB20E4E0770055E1F9 /* Release */ = {
+		F857EE2420E8B0A30055E1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,10 +364,9 @@
 			};
 			name = Release;
 		};
-		F857EDAD20E4E0770055E1F9 /* Debug */ = {
+		F857EE2620E8B0A30055E1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -392,7 +374,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AYMRestaurantView/Info.plist;
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -400,19 +382,17 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.AYMRestaurantView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		F857EDAE20E4E0770055E1F9 /* Release */ = {
+		F857EE2720E8B0A30055E1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -420,7 +400,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AYMRestaurantView/Info.plist;
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,7 +408,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.AYMRestaurantView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -436,38 +416,38 @@
 			};
 			name = Release;
 		};
-		F857EDB020E4E0770055E1F9 /* Debug */ = {
+		F857EE2920E8B0A30055E1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
-				INFOPLIST_FILE = AYMRestaurantViewTests/Info.plist;
+				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.AYMRestaurantViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.CommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F857EDB120E4E0770055E1F9 /* Release */ = {
+		F857EE2A20E8B0A30055E1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
-				INFOPLIST_FILE = AYMRestaurantViewTests/Info.plist;
+				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.AYMRestaurantViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thejeraldo.CommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,34 +457,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F857ED9220E4E0760055E1F9 /* Build configuration list for PBXProject "AYMRestaurantView" */ = {
+		F857EE0B20E8B0A30055E1F9 /* Build configuration list for PBXProject "Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F857EDAA20E4E0770055E1F9 /* Debug */,
-				F857EDAB20E4E0770055E1F9 /* Release */,
+				F857EE2320E8B0A30055E1F9 /* Debug */,
+				F857EE2420E8B0A30055E1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F857EDAC20E4E0770055E1F9 /* Build configuration list for PBXNativeTarget "AYMRestaurantView" */ = {
+		F857EE2520E8B0A30055E1F9 /* Build configuration list for PBXNativeTarget "Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F857EDAD20E4E0770055E1F9 /* Debug */,
-				F857EDAE20E4E0770055E1F9 /* Release */,
+				F857EE2620E8B0A30055E1F9 /* Debug */,
+				F857EE2720E8B0A30055E1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F857EDAF20E4E0770055E1F9 /* Build configuration list for PBXNativeTarget "AYMRestaurantViewTests" */ = {
+		F857EE2820E8B0A30055E1F9 /* Build configuration list for PBXNativeTarget "CommonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F857EDB020E4E0770055E1F9 /* Debug */,
-				F857EDB120E4E0770055E1F9 /* Release */,
+				F857EE2920E8B0A30055E1F9 /* Debug */,
+				F857EE2A20E8B0A30055E1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F857ED8F20E4E0760055E1F9 /* Project object */;
+	rootObject = F857EE0820E8B0A30055E1F9 /* Project object */;
 }

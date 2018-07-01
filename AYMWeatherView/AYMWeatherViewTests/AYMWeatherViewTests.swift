@@ -29,32 +29,22 @@ class AYMWeatherViewTests: XCTestCase {
   func testWeatherAPI() {
     let expectation = XCTestExpectation(description: "Weather Request")
     
-    let urlString = "\(baseURL)/weather?APPID=\(apiKey)&lat=\(coord.latitude)&lon=\(coord.longitude)"
-    let url = URL(string: urlString)
-    let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    let api = WeatherAPI()
+    api.getWeather(apiKey: apiKey, coordinates: coord) { (weather, error) in
       guard error == nil else {
         print("Error \(error!)")
         expectation.fulfill()
         return
       }
-      
-      XCTAssertNotNil(data, "Response data must not be nil.")
-      
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .secondsSince1970
-      let weather = try? decoder.decode(Weather.self, from: data!)
-      
       XCTAssertNotNil(weather, "Weather is nil.")
       XCTAssertNotNil(weather?.weatherDetails?.first?.id, "Weather id is nil.")
       XCTAssertNotNil(weather?.weatherDetails?.first?.main, "Weather main is nil.")
       XCTAssertNotNil(weather?.main?.temp, "Weather main temp is nil.")
-      XCTAssertNotNil(weather?.main?.temp_max, "Weather temp max is nil.")
-      XCTAssertNotNil(weather?.main?.temp_min, "Weather temp min is nil.")
+      XCTAssertNotNil(weather?.main?.tempMax, "Weather temp max is nil.")
+      XCTAssertNotNil(weather?.main?.tempMin, "Weather temp min is nil.")
       XCTAssertNotNil(weather?.date, "Weather date is nil.")
-      
       expectation.fulfill()
     }
-    dataTask.resume()
     
     wait(for: [ expectation ], timeout: 60)
   }
@@ -79,7 +69,6 @@ class AYMWeatherViewTests: XCTestCase {
       
       XCTAssertNotNil(forecast, "Forecast is nil.")
       XCTAssert(forecast?.list != nil, "Forecast list is nil.")
-      XCTAssert(forecast?.list?.count == 40, "Forecast list count is not 40.")
       
       expectation.fulfill()
     }
@@ -94,8 +83,7 @@ class AYMWeatherViewTests: XCTestCase {
     let weatherView = AYMWeatherView(apiKey: apiKey)
     weatherView.downloadWeather(coord: coord) { (error) in
       print("")
-      XCTAssertNotNil(weatherForecast?.weather, "Weather View Weather is nil.")
-      XCTAssert(weatherForecast?.forecast?.list?.count == 40, "Weather View Forecast list count is not 40.")
+      XCTAssertNil(error, "Error is not nil.")
       expectation.fulfill()
     }
     

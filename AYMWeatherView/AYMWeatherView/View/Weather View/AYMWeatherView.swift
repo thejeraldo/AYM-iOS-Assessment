@@ -10,33 +10,48 @@ import UIKit
 import CoreLocation
 
 public protocol AYMWeatherViewDelegate: class {
-  func weatherViewDidPullDownToRefresh()
+  // Required
   func weatherViewDidStartDownloadingData()
   func weatherViewDidFinishDownloadingData()
   func weatherViewDidFailDownloadDataWithError(_ error: Error)
+  // Optional
+  func weatherViewDidPullDownToRefresh()
+  func weatherViewDidSelectDailyForecast(_ forecast: DailyForecast, at indexPath: IndexPath)
+}
+
+public extension AYMWeatherViewDelegate {
+  func weatherViewDidPullDownToRefresh() {
+    
+  }
+
+  func weatherViewDidSelectDailyForecast(_ forecast: DailyForecast, at indexPath: IndexPath) {
+    
+  }
 }
 
 open class AYMWeatherView: UIView {
   
   // MARK: - Public Properties
   
+  
+  /// Provide an OpenWeatherMap.org API Key.
   open var apiKey: String
-  open var city: String?
-  public var fiveDayForecast: [DailyForecast]?
+  public var fiveDayForecast = [DailyForecast]()
   public weak var delegate: AYMWeatherViewDelegate?
   
-  @IBOutlet public weak var cityLabel: UILabel!
-  @IBOutlet public weak var dayLabel: UILabel!
-  @IBOutlet public weak var descriptionLabel: UILabel!
-  @IBOutlet public weak var conditionImageView: UIImageView!
-  @IBOutlet public weak var temperatureLabel: UILabel!
-  @IBOutlet public weak var unitsLabel: UILabel!
-  @IBOutlet public weak var humidityLabel: UILabel!
-  @IBOutlet public weak var pressureLabel: UILabel!
-  @IBOutlet public weak var windLabel: UILabel!
+  @IBOutlet public weak var cityLabel: UILabel?
+  @IBOutlet public weak var dayLabel: UILabel?
+  @IBOutlet public weak var descriptionLabel: UILabel?
+  @IBOutlet public weak var conditionImageView: UIImageView?
+  @IBOutlet public weak var temperatureLabel: UILabel?
+  @IBOutlet public weak var unitsLabel: UILabel?
+  @IBOutlet public weak var humidityLabel: UILabel?
+  @IBOutlet public weak var pressureLabel: UILabel?
+  @IBOutlet public weak var windLabel: UILabel?
   
   // MARK: - Private Properties
-  var weatherViewModel: WeatherViewModel?
+  private var city: String?
+  private var weatherViewModel: WeatherViewModel?
   private lazy var locationManager: CLLocationManager = {
     let locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -44,16 +59,16 @@ open class AYMWeatherView: UIView {
     return locationManager
   }()
   
-  @IBOutlet private weak var tableView: UITableView! {
+  @IBOutlet private weak var tableView: UITableView? {
     didSet {
-      self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
-      tableView.dataSource = self
-      tableView.delegate = self
-      tableView.showsVerticalScrollIndicator = false
-      tableView.separatorStyle = .none
-      tableView.allowsSelection = false
-      tableView.tableHeaderView = UIView()
-      tableView.tableFooterView = UIView()
+      self.tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+      tableView?.dataSource = self
+      tableView?.delegate = self
+      tableView?.showsVerticalScrollIndicator = false
+      tableView?.separatorStyle = .none
+      tableView?.allowsSelection = false
+      tableView?.tableHeaderView = UIView()
+      tableView?.tableFooterView = UIView()
       // Refresh Control
       let refreshControl = UIRefreshControl()
       let attribs: [NSAttributedStringKey: Any] = [
@@ -62,14 +77,14 @@ open class AYMWeatherView: UIView {
       ]
       refreshControl.attributedTitle = NSAttributedString(string: "↓ Pull Down To Refresh", attributes: attribs)
       refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-      tableView.refreshControl = refreshControl
+      tableView?.refreshControl = refreshControl
     }
   }
-  @IBOutlet private weak var forecastCollectionView: UICollectionView! {
+  @IBOutlet private weak var forecastCollectionView: UICollectionView? {
     didSet {
       let bundle = Bundle(for: type(of: self))
       let collectionViewNib = UINib(nibName: "ForecastCollectionViewCell", bundle: bundle)
-      self.forecastCollectionView.register(collectionViewNib, forCellWithReuseIdentifier: "forecastCell")
+      self.forecastCollectionView?.register(collectionViewNib, forCellWithReuseIdentifier: "forecastCell")
       
       let layout = UICollectionViewFlowLayout()
       layout.scrollDirection = .horizontal
@@ -77,8 +92,8 @@ open class AYMWeatherView: UIView {
       layout.sectionInset = UIEdgeInsets.zero
       layout.minimumInteritemSpacing = 0
       layout.minimumLineSpacing = 0
-      self.forecastCollectionView.setCollectionViewLayout(layout, animated: false)
-      self.forecastCollectionView.dataSource = self
+      self.forecastCollectionView?.setCollectionViewLayout(layout, animated: false)
+      self.forecastCollectionView?.dataSource = self
     }
   }
   @IBOutlet private weak var weatherViewContainer: UIView!
@@ -132,7 +147,7 @@ open class AYMWeatherView: UIView {
   
   /// Ends refreshing.
   open func endRefreshing() {
-    self.tableView.refreshControl?.endRefreshing()
+    self.tableView?.refreshControl?.endRefreshing()
   }
   
   // MARK: - Private Methods
@@ -144,29 +159,29 @@ open class AYMWeatherView: UIView {
   }
   
   private func setDefaultValues() {
-    cityLabel.text = ""
-    dayLabel.text = ""
-    descriptionLabel.text = ""
-    conditionImageView.image = nil
-    temperatureLabel.text = "--"
-    unitsLabel.text = "°C"
-    humidityLabel.text = "--"
-    pressureLabel.text = "--"
-    windLabel.text = "--"
-    fiveDayForecast = nil
-    forecastCollectionView.reloadData()
+    cityLabel?.text = ""
+    dayLabel?.text = ""
+    descriptionLabel?.text = ""
+    conditionImageView?.image = nil
+    temperatureLabel?.text = "--"
+    unitsLabel?.text = "°C"
+    humidityLabel?.text = "--"
+    pressureLabel?.text = "--"
+    windLabel?.text = "--"
+    fiveDayForecast = [DailyForecast]()
+    forecastCollectionView?.reloadData()
   }
   
   private func updateUI() {
-    cityLabel.text = city
-    dayLabel.text = weatherViewModel?.dayText
-    descriptionLabel.text = weatherViewModel?.descriptionText
-    conditionImageView.image = weatherViewModel?.conditionImage
-    temperatureLabel.text = weatherViewModel?.temperatureText
-    unitsLabel.text = weatherViewModel?.temperatureUnitText
-    humidityLabel.text = weatherViewModel?.humidityText
-    pressureLabel.text = weatherViewModel?.pressureText
-    windLabel.text = weatherViewModel?.windText
+    cityLabel?.text = city
+    dayLabel?.text = weatherViewModel?.dayText
+    descriptionLabel?.text = weatherViewModel?.descriptionText
+    conditionImageView?.image = weatherViewModel?.conditionImage
+    temperatureLabel?.text = weatherViewModel?.temperatureText
+    unitsLabel?.text = weatherViewModel?.temperatureUnitText
+    humidityLabel?.text = weatherViewModel?.humidityText
+    pressureLabel?.text = weatherViewModel?.pressureText
+    windLabel?.text = weatherViewModel?.windText
   }
 }
 
@@ -206,20 +221,24 @@ extension AYMWeatherView: UITableViewDataSource, UITableViewDelegate {
 
 extension AYMWeatherView: UICollectionViewDataSource {
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    if let count = self.fiveDayForecast?.count {
-      return count
-    }
-    return 0
+    return fiveDayForecast.count
   }
 
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as! ForecastCollectionViewCell
-    if let forecasts = self.fiveDayForecast {
-      let forecast = forecasts[indexPath.row]
-      let forecastViewModel = DailyForecastViewModel(forecast)
-      cell.configureWith(forecastViewModel)
-    }
+    let forecast = fiveDayForecast[indexPath.row]
+    let forecastViewModel = DailyForecastViewModel(forecast)
+    cell.configureWith(forecastViewModel)
     return cell
+  }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension AYMWeatherView: UICollectionViewDelegate {
+  public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let forecast = fiveDayForecast[indexPath.row]
+    self.delegate?.weatherViewDidSelectDailyForecast(forecast, at: indexPath)
   }
 }
 
@@ -301,9 +320,9 @@ extension AYMWeatherView {
           return
         }
         
-        if let forecast = forecast {
-          self.fiveDayForecast = forecast.fiveDayForecast()
-          self.forecastCollectionView.reloadData()
+        if let dailyForecast = forecast?.fiveDayForecast() {
+          self.fiveDayForecast = dailyForecast
+          self.forecastCollectionView?.reloadData()
         }
         
         self.endRefreshing()

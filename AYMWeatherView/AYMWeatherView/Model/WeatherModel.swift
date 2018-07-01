@@ -16,18 +16,24 @@ struct WeatherForecast {
   }
 }
 
-struct Forecast: Codable {
-  let list: [Weather]?
-  func fiveDayForecast() -> [DailyForecast]? {
+public struct Forecast: Codable {
+  public let list: [Weather]?
+  public func fiveDayForecast() -> [DailyForecast]? {
     var forecast = [DailyForecast]()
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.dateFormat = "MMM dd yyyy"
     if let list = self.list {
-      let chunks = list.chunks((self.list?.count)! / 5)
+      let chunks = Dictionary(grouping: list) { (weather) -> String in
+        let dateString = dateFormatter.string(from: weather.date!)
+        return dateString
+      }
       for group in chunks {
         var maxTemp = 0.0
         var minTemp = Double.greatestFiniteMagnitude
-        for weather in group {
-          let temp_max = weather.main?.temp_max
-          let temp_min = weather.main?.temp_min
+        for weather in group.value {
+          let temp_max = weather.main?.tempMax
+          let temp_min = weather.main?.tempMin
           if temp_max! > maxTemp {
             maxTemp = temp_max!
           }
@@ -35,29 +41,32 @@ struct Forecast: Codable {
             minTemp = temp_min!
           }
         }
-        let date = group.last?.date
-        let condition = group.last?.weatherDetails?.last?.id
-        let dailyForecast = DailyForecast(temp_min: minTemp, temp_max: maxTemp, date: date, condition: condition)
+        let date = dateFormatter.date(from: group.key)
+        let condition = group.value.last?.weatherDetails?.last?.id
+        let dailyForecast = DailyForecast(tempMin: minTemp, tempMax: maxTemp, date: date, condition: condition)
         forecast.append(dailyForecast)
       }
     }
-    return forecast
+    forecast.sort {
+      $0.date! < $1.date!
+    }
+    return Array(forecast.prefix(5))
   }
 }
 
 public struct DailyForecast {
-  public let temp_min: Double?
-  public let temp_max: Double?
+  public let tempMin: Double?
+  public let tempMax: Double?
   public let date: Date?
   public let condition: Int?
 }
 
-struct Weather: Codable {
-  let weatherDetails: [WeatherDetails]?
-  let main: Main?
-  let wind: Wind?
-  let date: Date?
-  let city: String?
+public struct Weather: Codable {
+  public let weatherDetails: [WeatherDetails]?
+  public let main: Main?
+  public let wind: Wind?
+  public let date: Date?
+  public let city: String?
   
   private enum CodingKeys: String, CodingKey {
     case weatherDetails = "weather"
@@ -68,11 +77,11 @@ struct Weather: Codable {
   }
 }
 
-struct WeatherDetails: Codable {
-  let id: Int?
-  let main: String?
-  let weatherDescription: String?
-  let icon: String?
+public struct WeatherDetails: Codable {
+  public let id: Int?
+  public let main: String?
+  public let weatherDescription: String?
+  public let icon: String?
   
   private enum CodingKeys: String, CodingKey {
     case id
@@ -82,15 +91,15 @@ struct WeatherDetails: Codable {
   }
 }
 
-struct Main: Codable {
-  let temp: Double?
-  let temp_min: Double?
-  let temp_max: Double?
-  let pressure: Double?
-  let humidity: Int?
+public struct Main: Codable {
+  public let temp: Double?
+  public let tempMin: Double?
+  public let tempMax: Double?
+  public let pressure: Double?
+  public let humidity: Int?
 }
 
-struct Wind: Codable {
-  let speed: Double?
-  let deg: Double?
+public struct Wind: Codable {
+  public let speed: Double?
+  public let deg: Double?
 }

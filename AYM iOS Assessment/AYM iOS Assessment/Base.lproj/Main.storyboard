@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,29 +16,65 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="AYM_iOS_Assessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-C5-bwb" customClass="AYMWeatherView" customModule="AYMWeatherView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia2-CB-OgA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-C5-bwb" customClass="AYMWeatherView" customModule="AYMWeatherView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" name="weather-background"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmT-DN-bWY">
+                                <rect key="frame" x="199" y="60" width="160" height="38"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.25490196079999999" blue="0.12549019610000001" alpha="0.40164811639178077" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="W6M-JO-PUp"/>
+                                    <constraint firstAttribute="height" constant="38" id="ZWZ-26-hfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="POPULAR RESTAURANTS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRestaurantsVC" destination="BYZ-38-t0r" eventType="touchUpInside" id="boG-4n-FdE"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="weather-background"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ia2-CB-OgA" secondAttribute="bottom" id="2sS-wv-kfa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ia2-CB-OgA" secondAttribute="trailing" id="BzE-A6-S3z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mU6-C5-bwb" secondAttribute="trailing" id="DJX-TS-NwI"/>
+                            <constraint firstItem="mU6-C5-bwb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="IpW-VV-kpu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xmT-DN-bWY" secondAttribute="trailing" constant="16" id="Ytb-Mi-iNx"/>
+                            <constraint firstItem="xmT-DN-bWY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="bgO-1p-dsl"/>
+                            <constraint firstItem="Ia2-CB-OgA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fLa-1p-ewf"/>
                             <constraint firstItem="mU6-C5-bwb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hv6-Ti-XxA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mU6-C5-bwb" secondAttribute="bottom" id="lbT-J4-jr9"/>
-                            <constraint firstItem="mU6-C5-bwb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ocN-ZJ-oaB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mU6-C5-bwb" secondAttribute="bottom" id="l69-rx-aIR"/>
+                            <constraint firstItem="Ia2-CB-OgA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ug9-5b-cgC"/>
+                            <constraint firstItem="xmT-DN-bWY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="zeu-gg-AfY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="restaurantsButton" destination="xmT-DN-bWY" id="Y5m-KJ-JVa"/>
                         <outlet property="weatherView" destination="mU6-C5-bwb" id="L8C-10-8PJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="35.467980295566505"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="weather-background">
+            <color red="0.94099998474121094" green="0.80400002002716064" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="weather-background">
+            <color red="0.94099998474121094" green="0.80400002002716064" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
