@@ -86,7 +86,7 @@ struct DailyForecastViewModel {
     return "\(maxTempCelsius)°"
   }
   var minTempString: String {
-    let minTemp = forecast.temp_max ?? 0.0
+    let minTemp = forecast.temp_min ?? 0.0
     let minTempCelsius = Int(minTemp - 273.15)
     return "\(minTempCelsius)°"
   }
