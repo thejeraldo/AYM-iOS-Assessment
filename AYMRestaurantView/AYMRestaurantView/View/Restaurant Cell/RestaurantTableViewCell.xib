@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="450" height="135.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-Wf-tVW">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-Wf-tVW">
                         <rect key="frame" x="10" y="10" width="115" height="115"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -130,6 +130,5 @@
     <resources>
         <image name="cuisine" width="33" height="33"/>
         <image name="marker" width="33" height="33"/>
-        <image name="placeholder" width="33" height="33"/>
     </resources>
 </document>
