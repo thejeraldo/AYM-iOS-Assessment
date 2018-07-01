@@ -14,6 +14,12 @@ class WeatherViewController: UIViewController, AYMWeatherViewDelegate {
   
   // MARK: - IBOutlets
   
+  @IBOutlet weak var restaurantsButton: UIButton! {
+    didSet {
+      restaurantsButton.clipsToBounds = true
+      restaurantsButton.layer.cornerRadius = restaurantsButton.frame.height * 0.5
+    }
+  }
   @IBOutlet weak var weatherView: AYMWeatherView! {
     didSet {
       weatherView.apiKey = "a052106f5d60e7b1389d825128d90275"
@@ -48,6 +54,10 @@ class WeatherViewController: UIViewController, AYMWeatherViewDelegate {
   }
   
   func weatherViewDidFailDownloadDataWithError(_ error: Error) {
+    
+  }
+  
+  @IBAction func showRestaurantsVC() {
     
   }
 }
