@@ -92,6 +92,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QPQ-uJ-deE"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantView" destination="3Xy-Xf-bVv" id="q3x-h9-eSP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-M3-hm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

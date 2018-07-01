@@ -11,13 +11,19 @@ import AYMRestaurantView
 
 class RestaurantsViewController: UIViewController {
   
-  @IBOutlet weak var restaurantView: AYMRestaurantView!
+  @IBOutlet weak var restaurantView: AYMRestaurantView! {
+    didSet {
+      restaurantView.zomatoAPIKey = "020541769015d08a109afa60dde2703a"
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
     title = "Nearby Restaurants"
+    
+    restaurantView.downloadRestaurants()
   }
   
   override func viewWillAppear(_ animated: Bool) {

@@ -8,50 +8,50 @@
 
 import Foundation
 
-struct GeoCode: Codable {
-  let location: Location?
+public struct GeoCode: Codable {
+  public let location: Location?
 }
 
-struct Location: Codable {
-  let entityType: String?
-  let entityId: Int?
-  let title: String?
-  let latitude: String?
-  let longitude: String?
-  let cityId: Int?
-  let cityName: String?
-  let countryId: Int?
-  let countryName: String?
+public struct Location: Codable {
+  public let entityType: String?
+  public let entityId: Int?
+  public let title: String?
+  public let latitude: String?
+  public let longitude: String?
+  public let cityId: Int?
+  public let cityName: String?
+  public let countryId: Int?
+  public let countryName: String?
 }
 
-struct RestaurantSearch: Codable {
-  let restaurants: [Restaurant]?
+public struct RestaurantSearch: Codable {
+  public let restaurants: [Restaurant]?
 }
 
-struct Restaurant: Codable {
-  let details: RestaurantDetails?
+public struct Restaurant: Codable {
+  public let details: RestaurantDetails?
   
   private enum CodingKeys: String, CodingKey {
     case details = "restaurant"
   }
 }
 
-struct RestaurantDetails: Codable {
-  let id: String?
-  let name: String?
-  let thumb: String?
-  let location: RestaurantLocation?
-  let cuisines: String?
-  let userRating: UserRating?
+public struct RestaurantDetails: Codable {
+  public let id: String?
+  public let name: String?
+  public let thumb: String?
+  public let location: RestaurantLocation?
+  public let cuisines: String?
+  public let userRating: UserRating?
 }
 
-struct RestaurantLocation: Codable {
-  let city: String?
+public struct RestaurantLocation: Codable {
+  public let city: String?
 }
 
-struct UserRating: Codable {
-  let aggregateRating: String?
-  let votes: String?
+public struct UserRating: Codable {
+  public let aggregateRating: String?
+  public let votes: String?
 }
 
 

@@ -15,6 +15,9 @@
 		F8F6D86720E8E56100A6FD8E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2C20E8B0E10055E1F9 /* Common.framework */; };
 		F8F6D86A20E8E68E00A6FD8E /* AYMRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86920E8E68E00A6FD8E /* AYMRestaurantView.swift */; };
 		F8F6D86D20E8E6A500A6FD8E /* AYMRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */; };
+		F8F6D86F20E8F76700A6FD8E /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86E20E8F76700A6FD8E /* RestaurantViewModel.swift */; };
+		F8F6D87220E8F99F00A6FD8E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D87020E8F99F00A6FD8E /* RestaurantTableViewCell.swift */; };
+		F8F6D87320E8F99F00A6FD8E /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D87120E8F99F00A6FD8E /* RestaurantTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		F857EE2C20E8B0E10055E1F9 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F6D86920E8E68E00A6FD8E /* AYMRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMRestaurantView.swift; sourceTree = "<group>"; };
 		F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AYMRestaurantView.xib; sourceTree = "<group>"; };
+		F8F6D86E20E8F76700A6FD8E /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
+		F8F6D87020E8F99F00A6FD8E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		F8F6D87120E8F99F00A6FD8E /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		F857EDB520E4E1470055E1F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F8F6D86E20E8F76700A6FD8E /* RestaurantViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -137,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F6D86B20E8E69300A6FD8E /* Restaurant View */,
+				F8F6D87420E8F9A800A6FD8E /* Restaurant Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +156,15 @@
 				F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */,
 			);
 			path = "Restaurant View";
+			sourceTree = "<group>";
+		};
+		F8F6D87420E8F9A800A6FD8E /* Restaurant Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D87120E8F99F00A6FD8E /* RestaurantTableViewCell.xib */,
+				F8F6D87020E8F99F00A6FD8E /* RestaurantTableViewCell.swift */,
+			);
+			path = "Restaurant Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D87320E8F99F00A6FD8E /* RestaurantTableViewCell.xib in Resources */,
 				F8F6D86D20E8E6A500A6FD8E /* AYMRestaurantView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D87220E8F99F00A6FD8E /* RestaurantTableViewCell.swift in Sources */,
 				F8F6D86A20E8E68E00A6FD8E /* AYMRestaurantView.swift in Sources */,
+				F8F6D86F20E8F76700A6FD8E /* RestaurantViewModel.swift in Sources */,
 				F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */,
 				F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */,
 			);
