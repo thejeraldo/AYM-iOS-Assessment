@@ -81,6 +81,33 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		F857EE0020E84BCE0055E1F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F857EE0220E84BFF0055E1F9 /* Weather View */,
+				F857EE0120E84BED0055E1F9 /* Forecast Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F857EE0120E84BED0055E1F9 /* Forecast Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D6520E425EB00570C99 /* ForecastCollectionViewCell.swift */,
+				F85D4D6720E4262200570C99 /* ForecastCollectionViewCell.xib */,
+			);
+			path = "Forecast Cell";
+			sourceTree = "<group>";
+		};
+		F857EE0220E84BFF0055E1F9 /* Weather View */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
+				F85D4D5920E416B900570C99 /* AYMWeatherView.xib */,
+			);
+			path = "Weather View";
+			sourceTree = "<group>";
+		};
 		F85D4D2920E3FFB000570C99 = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +134,8 @@
 				F85D4D5E20E41DA000570C99 /* Weather API */,
 				F85D4D4D20E400AE00570C99 /* Model */,
 				F85D4D6C20E429A700570C99 /* ViewModel */,
+				F857EE0020E84BCE0055E1F9 /* View */,
 				F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */,
-				F85D4D5020E4058200570C99 /* AYMWeatherView.swift */,
-				F85D4D5920E416B900570C99 /* AYMWeatherView.xib */,
-				F85D4D6520E425EB00570C99 /* ForecastCollectionViewCell.swift */,
-				F85D4D6720E4262200570C99 /* ForecastCollectionViewCell.xib */,
 				F85D4D3720E3FFB000570C99 /* Info.plist */,
 				F85D4D5B20E4177000570C99 /* Assets.xcassets */,
 			);
