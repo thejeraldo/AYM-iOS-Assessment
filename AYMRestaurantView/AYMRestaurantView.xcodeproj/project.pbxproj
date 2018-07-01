@@ -18,6 +18,7 @@
 		F8F6D86F20E8F76700A6FD8E /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86E20E8F76700A6FD8E /* RestaurantViewModel.swift */; };
 		F8F6D87220E8F99F00A6FD8E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D87020E8F99F00A6FD8E /* RestaurantTableViewCell.swift */; };
 		F8F6D87320E8F99F00A6FD8E /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D87120E8F99F00A6FD8E /* RestaurantTableViewCell.xib */; };
+		F8F6D89220E909DF00A6FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D89120E909DF00A6FD8E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		F8F6D86E20E8F76700A6FD8E /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		F8F6D87020E8F99F00A6FD8E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		F8F6D87120E8F99F00A6FD8E /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		F8F6D89120E909DF00A6FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				F8F6D86820E8E67600A6FD8E /* View */,
 				F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */,
 				F857ED9C20E4E0770055E1F9 /* Info.plist */,
+				F8F6D89120E909DF00A6FD8E /* Assets.xcassets */,
 			);
 			path = AYMRestaurantView;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F6D87320E8F99F00A6FD8E /* RestaurantTableViewCell.xib in Resources */,
+				F8F6D89220E909DF00A6FD8E /* Assets.xcassets in Resources */,
 				F8F6D86D20E8E6A500A6FD8E /* AYMRestaurantView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

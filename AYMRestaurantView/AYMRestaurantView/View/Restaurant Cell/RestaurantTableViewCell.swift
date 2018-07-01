@@ -10,16 +10,34 @@ import UIKit
 
 open class RestaurantTableViewCell: UITableViewCell {
   
-  @IBOutlet public weak var thumbImageView: UIImageView?
+  @IBOutlet public weak var thumbImageView: UIImageView? {
+    didSet {
+      thumbImageView?.clipsToBounds = true
+      thumbImageView?.layer.cornerRadius = 4
+      thumbImageView?.contentMode = .center
+    }
+  }
   @IBOutlet public weak var nameLabel: UILabel?
-  @IBOutlet public weak var ratingsLabel: UILabel?
+  @IBOutlet public weak var cityLabel: UILabel?
+  @IBOutlet public weak var cuisineLabel: UILabel?
+  @IBOutlet public weak var ratingsLabel: UILabel? {
+    didSet {
+      // ratingsLabel?.textColor = UIColor.gray
+    }
+  }
+  @IBOutlet public weak var votesLabel: UILabel?
   
   public func configureWith(_ restaurantViewModel: RestaurantViewModel) {
     if let thumb = restaurantViewModel.thumbURLString {
+      thumbImageView?.contentMode = .scaleAspectFill
       thumbImageView?.loadImageUsingUrlString(urlString: thumb)
     }
     nameLabel?.text = restaurantViewModel.nameText
-    ratingsLabel?.text = restaurantViewModel.ratingsText
+    cityLabel?.text = restaurantViewModel.cityText
+    cuisineLabel?.text = restaurantViewModel.cuisineText
+    votesLabel?.text = restaurantViewModel.reviewsCountText
+    ratingsLabel?.attributedText = restaurantViewModel.ratingsText
+    
   }
   
   override open func awakeFromNib() {

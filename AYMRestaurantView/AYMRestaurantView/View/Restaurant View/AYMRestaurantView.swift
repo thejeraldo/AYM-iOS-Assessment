@@ -21,6 +21,7 @@ open class AYMRestaurantView: UIView {
     didSet {
       tableView?.dataSource = self
       tableView?.delegate = self
+      tableView?.tableFooterView = UIView()
     }
   }
   
