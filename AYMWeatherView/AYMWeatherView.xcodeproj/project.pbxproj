@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F857EE3020E8B0E90055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2F20E8B0E90055E1F9 /* Common.framework */; };
+		F857EE3020E8B0E90055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2F20E8B0E90055E1F9 /* Common.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F85D4D3D20E3FFB000570C99 /* AYMWeatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D3320E3FFB000570C99 /* AYMWeatherView.framework */; };
 		F85D4D4220E3FFB000570C99 /* AYMWeatherViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D4120E3FFB000570C99 /* AYMWeatherViewTests.swift */; };
 		F85D4D4420E3FFB000570C99 /* AYMWeatherView.h in Headers */ = {isa = PBXBuildFile; fileRef = F85D4D3620E3FFB000570C99 /* AYMWeatherView.h */; settings = {ATTRIBUTES = (Public, ); }; };

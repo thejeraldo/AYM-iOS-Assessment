@@ -14,8 +14,6 @@
 		F85D4D0620E3FE5700570C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D0420E3FE5700570C99 /* LaunchScreen.storyboard */; };
 		F85D4D1120E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1020E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift */; };
 		F85D4D1C20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1B20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift */; };
-		F85D4D5320E40CBC00570C99 /* AYMWeatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */; };
-		F85D4D5420E40CBD00570C99 /* AYMWeatherView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5720E414D100570C99 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F85D4D5520E40CBD00570C99 /* Embed Frameworks */ = {
+		F857EE3C20E8C17B0055E1F9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F85D4D5420E40CBD00570C99 /* AYMWeatherView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85D4D5320E40CBC00570C99 /* AYMWeatherView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +161,7 @@
 				F85D4CF420E3FE5300570C99 /* Sources */,
 				F85D4CF520E3FE5300570C99 /* Frameworks */,
 				F85D4CF620E3FE5300570C99 /* Resources */,
-				F85D4D5520E40CBD00570C99 /* Embed Frameworks */,
+				F857EE3C20E8C17B0055E1F9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
