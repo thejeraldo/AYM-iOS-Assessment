@@ -10,10 +10,23 @@ import UIKit
 import CoreLocation
 
 public protocol AYMWeatherViewDelegate: class {
-  func weatherViewDidPullDownToRefresh()
+  // Required
   func weatherViewDidStartDownloadingData()
   func weatherViewDidFinishDownloadingData()
   func weatherViewDidFailDownloadDataWithError(_ error: Error)
+  // Optional
+  func weatherViewDidPullDownToRefresh()
+  func weatherViewDidSelectDailyForecast(_ forecast: DailyForecast, at indexPath: IndexPath)
+}
+
+public extension AYMWeatherViewDelegate {
+  func weatherViewDidPullDownToRefresh() {
+    
+  }
+
+  func weatherViewDidSelectDailyForecast(_ forecast: DailyForecast, at indexPath: IndexPath) {
+    
+  }
 }
 
 open class AYMWeatherView: UIView {
@@ -22,7 +35,7 @@ open class AYMWeatherView: UIView {
   
   open var apiKey: String
   open var city: String?
-  public var fiveDayForecast: [DailyForecast]?
+  public var fiveDayForecast = [DailyForecast]()
   public weak var delegate: AYMWeatherViewDelegate?
   
   @IBOutlet public weak var cityLabel: UILabel!
@@ -153,7 +166,7 @@ open class AYMWeatherView: UIView {
     humidityLabel.text = "--"
     pressureLabel.text = "--"
     windLabel.text = "--"
-    fiveDayForecast = nil
+    fiveDayForecast = [DailyForecast]()
     forecastCollectionView.reloadData()
   }
   
@@ -206,20 +219,24 @@ extension AYMWeatherView: UITableViewDataSource, UITableViewDelegate {
 
 extension AYMWeatherView: UICollectionViewDataSource {
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    if let count = self.fiveDayForecast?.count {
-      return count
-    }
-    return 0
+    return fiveDayForecast.count
   }
 
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as! ForecastCollectionViewCell
-    if let forecasts = self.fiveDayForecast {
-      let forecast = forecasts[indexPath.row]
-      let forecastViewModel = DailyForecastViewModel(forecast)
-      cell.configureWith(forecastViewModel)
-    }
+    let forecast = fiveDayForecast[indexPath.row]
+    let forecastViewModel = DailyForecastViewModel(forecast)
+    cell.configureWith(forecastViewModel)
     return cell
+  }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension AYMWeatherView: UICollectionViewDelegate {
+  public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let forecast = fiveDayForecast[indexPath.row]
+    self.delegate?.weatherViewDidSelectDailyForecast(forecast, at: indexPath)
   }
 }
 
@@ -301,8 +318,8 @@ extension AYMWeatherView {
           return
         }
         
-        if let forecast = forecast {
-          self.fiveDayForecast = forecast.fiveDayForecast()
+        if let dailyForecast = forecast?.fiveDayForecast() {
+          self.fiveDayForecast = dailyForecast
           self.forecastCollectionView.reloadData()
         }
         
