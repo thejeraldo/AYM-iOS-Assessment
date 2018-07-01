@@ -33,8 +33,9 @@ open class AYMWeatherView: UIView {
   
   // MARK: - Public Properties
   
+  
+  /// Provide an OpenWeatherMap.org API Key.
   open var apiKey: String
-  open var city: String?
   public var fiveDayForecast = [DailyForecast]()
   public weak var delegate: AYMWeatherViewDelegate?
   
@@ -49,7 +50,8 @@ open class AYMWeatherView: UIView {
   @IBOutlet public weak var windLabel: UILabel!
   
   // MARK: - Private Properties
-  var weatherViewModel: WeatherViewModel?
+  private var city: String?
+  private var weatherViewModel: WeatherViewModel?
   private lazy var locationManager: CLLocationManager = {
     let locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
