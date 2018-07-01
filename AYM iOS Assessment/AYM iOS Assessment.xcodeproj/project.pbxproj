@@ -15,6 +15,10 @@
 		F85D4D1120E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1020E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift */; };
 		F85D4D1C20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1B20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift */; };
 		F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5720E414D100570C99 /* WeatherViewController.swift */; };
+		F8F6D85B20E8E0E500A6FD8E /* AYMWeatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */; };
+		F8F6D85C20E8E0E500A6FD8E /* AYMWeatherView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8F6D85E20E8E12400A6FD8E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85D20E8E12400A6FD8E /* Common.framework */; };
+		F8F6D85F20E8E12400A6FD8E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85D20E8E12400A6FD8E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F8F6D85C20E8E0E500A6FD8E /* AYMWeatherView.framework in Embed Frameworks */,
+				F8F6D85F20E8E12400A6FD8E /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,8 +67,9 @@
 		F85D4D1720E3FE5800570C99 /* AYM iOS AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AYM iOS AssessmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4D1B20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYM_iOS_AssessmentUITests.swift; sourceTree = "<group>"; };
 		F85D4D1D20E3FE5800570C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMWeatherView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4D5720E414D100570C99 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMWeatherView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F6D85D20E8E12400A6FD8E /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D85B20E8E0E500A6FD8E /* AYMWeatherView.framework in Frameworks */,
+				F8F6D85E20E8E12400A6FD8E /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +102,8 @@
 		F85D4CEF20E3FE5300570C99 = {
 			isa = PBXGroup;
 			children = (
-				F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */,
+				F8F6D85D20E8E12400A6FD8E /* Common.framework */,
+				F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */,
 				F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */,
 				F85D4D0F20E3FE5800570C99 /* AYM iOS AssessmentTests */,
 				F85D4D1A20E3FE5800570C99 /* AYM iOS AssessmentUITests */,
