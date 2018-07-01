@@ -79,7 +79,6 @@ class AYMWeatherViewTests: XCTestCase {
       
       XCTAssertNotNil(forecast, "Forecast is nil.")
       XCTAssert(forecast?.list != nil, "Forecast list is nil.")
-      XCTAssert(forecast?.list?.count == 40, "Forecast list count is not 40.")
       
       expectation.fulfill()
     }

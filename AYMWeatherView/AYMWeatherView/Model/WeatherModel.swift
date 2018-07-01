@@ -20,12 +20,21 @@ struct Forecast: Codable {
   let list: [Weather]?
   func fiveDayForecast() -> [DailyForecast]? {
     var forecast = [DailyForecast]()
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.dateFormat = "MMM dd yyyy"
     if let list = self.list {
-      let chunks = list.chunks((self.list?.count)! / 5)
+      // let chunks = list.chunks((self.list?.count)! / 5)
+      let chunks = Dictionary(grouping: list) { (weather) -> String in
+        let dateString = dateFormatter.string(from: weather.date!)
+        return dateString
+      }
       for group in chunks {
+        print("GROUP \(group.key)")
         var maxTemp = 0.0
         var minTemp = Double.greatestFiniteMagnitude
-        for weather in group {
+        for weather in group.value {
+          print("Weather \(weather.date!) ::: \(weather.main?.temp_max!) - \(weather.main?.temp_min!)_")
           let temp_max = weather.main?.temp_max
           let temp_min = weather.main?.temp_min
           if temp_max! > maxTemp {
@@ -35,13 +44,18 @@ struct Forecast: Codable {
             minTemp = temp_min!
           }
         }
-        let date = group.last?.date
-        let condition = group.last?.weatherDetails?.last?.id
+        print("MAX \(maxTemp)")
+        print("MIN \(minTemp)")
+        let date = dateFormatter.date(from: group.key)
+        let condition = group.value.last?.weatherDetails?.last?.id
         let dailyForecast = DailyForecast(temp_min: minTemp, temp_max: maxTemp, date: date, condition: condition)
         forecast.append(dailyForecast)
       }
     }
-    return forecast
+    forecast.sort {
+      $0.date! < $1.date!
+    }
+    return Array(forecast.prefix(5))
   }
 }
 
