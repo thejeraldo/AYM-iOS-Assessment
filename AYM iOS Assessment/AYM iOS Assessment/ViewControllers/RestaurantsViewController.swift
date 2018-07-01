@@ -34,7 +34,7 @@ class RestaurantsViewController: UIViewController {
     navigationController?.navigationBar.titleTextAttributes = [
       NSAttributedStringKey.foregroundColor: UIColor.white
     ]
-    navigationController?.setNavigationBarHidden(false, animated: false)
+    navigationController?.setNavigationBarHidden(false, animated: true)
   }
   
   override func didReceiveMemoryWarning() {
