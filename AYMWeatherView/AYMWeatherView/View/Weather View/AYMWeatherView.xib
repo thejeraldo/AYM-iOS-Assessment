@@ -32,14 +32,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3eF-N6-DsL">
-                    <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <color key="backgroundColor" name="weather-background"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-ts-QFh">
-                    <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JR-6C-bdi">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ISH-Zv-Ekc">
                                     <rect key="frame" x="16" y="16" width="192.66666666666666" height="90"/>
@@ -75,7 +75,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PIZ-Pn-8mS">
-                                    <rect key="frame" x="100" y="258.66666666666669" width="176" height="96"/>
+                                    <rect key="frame" x="100" y="241.66666666666669" width="176" height="96"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partly-cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="KLi-CG-Z1R">
                                             <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
@@ -107,7 +107,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TQT-Of-6cs">
-                                    <rect key="frame" x="30" y="535" width="315" height="49"/>
+                                    <rect key="frame" x="30" y="501" width="315" height="49"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-kP-WYx">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="49"/>
@@ -244,7 +244,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljv-dK-AVW">
-                            <rect key="frame" x="0.0" y="614" width="375" height="154"/>
+                            <rect key="frame" x="0.0" y="580" width="375" height="154"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vZr-yZ-HmX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
@@ -281,12 +281,12 @@
             </subviews>
             <color key="backgroundColor" name="weather-background"/>
             <constraints>
+                <constraint firstItem="b2D-nv-oDI" firstAttribute="bottom" secondItem="3eF-N6-DsL" secondAttribute="bottom" id="98B-Y1-yuc"/>
                 <constraint firstItem="b2D-nv-oDI" firstAttribute="trailing" secondItem="MIo-ts-QFh" secondAttribute="trailing" id="BK7-41-KS0"/>
+                <constraint firstItem="b2D-nv-oDI" firstAttribute="bottom" secondItem="MIo-ts-QFh" secondAttribute="bottom" id="FrD-fN-ppp"/>
                 <constraint firstAttribute="trailing" secondItem="3eF-N6-DsL" secondAttribute="trailing" id="NJ2-wC-TNk"/>
                 <constraint firstItem="MIo-ts-QFh" firstAttribute="leading" secondItem="b2D-nv-oDI" secondAttribute="leading" id="VZn-fN-QIx"/>
-                <constraint firstAttribute="bottom" secondItem="3eF-N6-DsL" secondAttribute="bottom" id="W81-2E-KDT"/>
                 <constraint firstItem="3eF-N6-DsL" firstAttribute="leading" secondItem="ozi-26-m1I" secondAttribute="leading" id="XRU-Fu-5yR"/>
-                <constraint firstAttribute="bottom" secondItem="MIo-ts-QFh" secondAttribute="bottom" id="bpF-Uc-7fd"/>
                 <constraint firstItem="3eF-N6-DsL" firstAttribute="top" secondItem="b2D-nv-oDI" secondAttribute="top" id="r5L-9B-1Vb"/>
                 <constraint firstItem="MIo-ts-QFh" firstAttribute="top" secondItem="b2D-nv-oDI" secondAttribute="top" id="sXU-M4-Tib"/>
             </constraints>
