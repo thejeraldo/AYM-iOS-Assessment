@@ -19,6 +19,9 @@
 		F8F6D85C20E8E0E500A6FD8E /* AYMWeatherView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8F6D85E20E8E12400A6FD8E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85D20E8E12400A6FD8E /* Common.framework */; };
 		F8F6D85F20E8E12400A6FD8E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D85D20E8E12400A6FD8E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8F6D86320E8E4A900A6FD8E /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86220E8E4A800A6FD8E /* RestaurantsViewController.swift */; };
+		F8F6D86520E8E53E00A6FD8E /* AYMRestaurantView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */; };
+		F8F6D86620E8E53E00A6FD8E /* AYMRestaurantView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,7 @@
 			files = (
 				F8F6D85C20E8E0E500A6FD8E /* AYMWeatherView.framework in Embed Frameworks */,
 				F8F6D85F20E8E12400A6FD8E /* Common.framework in Embed Frameworks */,
+				F8F6D86620E8E53E00A6FD8E /* AYMRestaurantView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +74,8 @@
 		F85D4D5720E414D100570C99 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMWeatherView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F6D85D20E8E12400A6FD8E /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F6D86220E8E4A800A6FD8E /* RestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMRestaurantView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 			files = (
 				F8F6D85B20E8E0E500A6FD8E /* AYMWeatherView.framework in Frameworks */,
 				F8F6D85E20E8E12400A6FD8E /* Common.framework in Frameworks */,
+				F8F6D86520E8E53E00A6FD8E /* AYMRestaurantView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +109,7 @@
 		F85D4CEF20E3FE5300570C99 = {
 			isa = PBXGroup;
 			children = (
+				F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */,
 				F8F6D85D20E8E12400A6FD8E /* Common.framework */,
 				F8F6D85A20E8E0E500A6FD8E /* AYMWeatherView.framework */,
 				F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */,
@@ -156,6 +164,7 @@
 		F85D4D5620E4147600570C99 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8F6D86220E8E4A800A6FD8E /* RestaurantsViewController.swift */,
 				F85D4D5720E414D100570C99 /* WeatherViewController.swift */,
 			);
 			path = ViewControllers;
@@ -295,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85D4CFC20E3FE5300570C99 /* AppDelegate.swift in Sources */,
+				F8F6D86320E8E4A900A6FD8E /* RestaurantsViewController.swift in Sources */,
 				F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

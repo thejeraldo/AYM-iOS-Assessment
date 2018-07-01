@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aor-tG-nYB">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,6 +59,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ncT-Y6-VlE"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="restaurantsButton" destination="xmT-DN-bWY" id="Y5m-KJ-JVa"/>
                         <outlet property="weatherView" destination="mU6-C5-bwb" id="L8C-10-8PJ"/>
@@ -66,13 +68,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="975.20000000000005" y="35.467980295566505"/>
+        </scene>
+        <!--Restaurants View Controller-->
+        <scene sceneID="dvX-jH-fZR">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EUe-IA-Fbj" customClass="RestaurantsViewController" customModule="AYM_iOS_Assessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2fV-fi-icw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-Xf-bVv" customClass="AYMRestaurantView" customModule="AYMRestaurantView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QPQ-uJ-deE" firstAttribute="bottom" secondItem="3Xy-Xf-bVv" secondAttribute="bottom" id="2Z3-Zd-vWY"/>
+                            <constraint firstItem="QPQ-uJ-deE" firstAttribute="trailing" secondItem="3Xy-Xf-bVv" secondAttribute="trailing" id="QOz-9O-5Jt"/>
+                            <constraint firstItem="3Xy-Xf-bVv" firstAttribute="top" secondItem="QPQ-uJ-deE" secondAttribute="top" id="Ssd-hu-Pb4"/>
+                            <constraint firstItem="3Xy-Xf-bVv" firstAttribute="leading" secondItem="QPQ-uJ-deE" secondAttribute="leading" id="g0Q-nj-Nss"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QPQ-uJ-deE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-M3-hm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639.2" y="33.990147783251231"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zPG-en-uKm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aor-tG-nYB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zqt-B7-X8b">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yki-tU-NhP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CoE-mJ-xg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="32.799999999999997" y="35.467980295566505"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="weather-background">
-            <color red="0.94099998474121094" green="0.80400002002716064" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="weather-background">
             <color red="0.94099998474121094" green="0.80400002002716064" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

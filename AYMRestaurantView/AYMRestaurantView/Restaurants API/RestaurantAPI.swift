@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Common
 
 struct RestaurantAPI: EndPointProtocol {
   var apiKey: String

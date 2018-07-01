@@ -12,7 +12,9 @@
 		F857EDA920E4E0770055E1F9 /* AYMRestaurantView.h in Headers */ = {isa = PBXBuildFile; fileRef = F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */; };
 		F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */; };
-		F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2C20E8B0E10055E1F9 /* Common.framework */; };
+		F8F6D86720E8E56100A6FD8E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2C20E8B0E10055E1F9 /* Common.framework */; };
+		F8F6D86A20E8E68E00A6FD8E /* AYMRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86920E8E68E00A6FD8E /* AYMRestaurantView.swift */; };
+		F8F6D86D20E8E6A500A6FD8E /* AYMRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPI.swift; sourceTree = "<group>"; };
 		F857EE2C20E8B0E10055E1F9 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F6D86920E8E68E00A6FD8E /* AYMRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMRestaurantView.swift; sourceTree = "<group>"; };
+		F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AYMRestaurantView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */,
+				F8F6D86720E8E56100A6FD8E /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 				F857EDB320E4E1470055E1F9 /* Model */,
 				F857EDB420E4E1470055E1F9 /* Restaurants API */,
 				F857EDB520E4E1470055E1F9 /* ViewModel */,
+				F8F6D86820E8E67600A6FD8E /* View */,
 				F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */,
 				F857ED9C20E4E0770055E1F9 /* Info.plist */,
 			);
@@ -126,6 +131,23 @@
 				F857EE2C20E8B0E10055E1F9 /* Common.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F6D86820E8E67600A6FD8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D86B20E8E69300A6FD8E /* Restaurant View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8F6D86B20E8E69300A6FD8E /* Restaurant View */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D86920E8E68E00A6FD8E /* AYMRestaurantView.swift */,
+				F8F6D86C20E8E6A500A6FD8E /* AYMRestaurantView.xib */,
+			);
+			path = "Restaurant View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D86D20E8E6A500A6FD8E /* AYMRestaurantView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D86A20E8E68E00A6FD8E /* AYMRestaurantView.swift in Sources */,
 				F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */,
 				F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */,
 			);
