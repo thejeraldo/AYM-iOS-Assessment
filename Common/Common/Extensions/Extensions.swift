@@ -8,6 +8,31 @@
 
 import Foundation
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+public extension UIImageView {
+  func loadImageUsingUrlString(urlString: String) {
+    image = nil
+    if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
+      self.image = imageFromCache
+      return
+    }
+    
+    URLSession.shared.dataTask(with: URL(string: urlString)!) { (data, _, error) in
+      guard error == nil else {
+        print("Error downloading image. \(error!)")
+        return
+      }
+      
+      DispatchQueue.main.async {
+        let imageToCache = UIImage(data: data!)
+        imageCache.setObject(imageCache, forKey: urlString as AnyObject)
+        self.image = imageToCache
+      }
+    }.resume()
+  }
+}
+
 public extension Array {
   public func chunks(_ chunkSize: Int) -> [[Element]] {
     return stride(from: 0, to: self.count, by: chunkSize).map {
