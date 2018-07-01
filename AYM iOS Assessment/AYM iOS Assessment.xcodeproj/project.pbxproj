@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F857EDBE20E4F1050055E1F9 /* Dubai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F857EDBD20E4F1020055E1F9 /* Dubai.gpx */; };
 		F85D4CFC20E3FE5300570C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */; };
-		F85D4CFE20E3FE5300570C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4CFD20E3FE5300570C99 /* ViewController.swift */; };
 		F85D4D0120E3FE5300570C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85D4CFF20E3FE5300570C99 /* Main.storyboard */; };
 		F85D4D0320E3FE5700570C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D0220E3FE5700570C99 /* Assets.xcassets */; };
 		F85D4D0620E3FE5700570C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85D4D0420E3FE5700570C99 /* LaunchScreen.storyboard */; };
 		F85D4D1120E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1020E3FE5800570C99 /* AYM_iOS_AssessmentTests.swift */; };
 		F85D4D1C20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D1B20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift */; };
+		F85D4D5320E40CBC00570C99 /* AYMWeatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */; };
+		F85D4D5420E40CBD00570C99 /* AYMWeatherView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D4D5720E414D100570C99 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +36,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F85D4D5520E40CBD00570C99 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F85D4D5420E40CBD00570C99 /* AYMWeatherView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F857EDBD20E4F1020055E1F9 /* Dubai.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Dubai.gpx; sourceTree = "<group>"; };
 		F85D4CF820E3FE5300570C99 /* AYM iOS Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AYM iOS Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F85D4CFD20E3FE5300570C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F85D4D0020E3FE5300570C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F85D4D0220E3FE5700570C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F85D4D0520E3FE5700570C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +64,8 @@
 		F85D4D1720E3FE5800570C99 /* AYM iOS AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AYM iOS AssessmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D4D1B20E3FE5800570C99 /* AYM_iOS_AssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYM_iOS_AssessmentUITests.swift; sourceTree = "<group>"; };
 		F85D4D1D20E3FE5800570C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMWeatherView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85D4D5720E414D100570C99 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D4D5320E40CBC00570C99 /* AYMWeatherView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +97,7 @@
 		F85D4CEF20E3FE5300570C99 = {
 			isa = PBXGroup;
 			children = (
+				F85D4D5220E40CBC00570C99 /* AYMWeatherView.framework */,
 				F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */,
 				F85D4D0F20E3FE5800570C99 /* AYM iOS AssessmentTests */,
 				F85D4D1A20E3FE5800570C99 /* AYM iOS AssessmentUITests */,
@@ -97,8 +118,9 @@
 		F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				F857EDBD20E4F1020055E1F9 /* Dubai.gpx */,
+				F85D4D5620E4147600570C99 /* ViewControllers */,
 				F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */,
-				F85D4CFD20E3FE5300570C99 /* ViewController.swift */,
 				F85D4CFF20E3FE5300570C99 /* Main.storyboard */,
 				F85D4D0220E3FE5700570C99 /* Assets.xcassets */,
 				F85D4D0420E3FE5700570C99 /* LaunchScreen.storyboard */,
@@ -125,6 +147,14 @@
 			path = "AYM iOS AssessmentUITests";
 			sourceTree = "<group>";
 		};
+		F85D4D5620E4147600570C99 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F85D4D5720E414D100570C99 /* WeatherViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +165,7 @@
 				F85D4CF420E3FE5300570C99 /* Sources */,
 				F85D4CF520E3FE5300570C99 /* Frameworks */,
 				F85D4CF620E3FE5300570C99 /* Resources */,
+				F85D4D5520E40CBD00570C99 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +263,7 @@
 				F85D4D0620E3FE5700570C99 /* LaunchScreen.storyboard in Resources */,
 				F85D4D0320E3FE5700570C99 /* Assets.xcassets in Resources */,
 				F85D4D0120E3FE5300570C99 /* Main.storyboard in Resources */,
+				F857EDBE20E4F1050055E1F9 /* Dubai.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85D4CFE20E3FE5300570C99 /* ViewController.swift in Sources */,
 				F85D4CFC20E3FE5300570C99 /* AppDelegate.swift in Sources */,
+				F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
