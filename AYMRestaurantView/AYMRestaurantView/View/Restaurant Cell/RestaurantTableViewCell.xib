@@ -64,6 +64,7 @@
             <connections>
                 <outlet property="nameLabel" destination="4YF-H9-RBc" id="RkI-Mn-CkY"/>
                 <outlet property="ratingsLabel" destination="vGE-Vr-KZY" id="TaO-9w-HNq"/>
+                <outlet property="thumbImageView" destination="Ryv-Wf-tVW" id="ZZk-FJ-C0P"/>
             </connections>
             <point key="canvasLocation" x="-131" y="63"/>
         </tableViewCell>

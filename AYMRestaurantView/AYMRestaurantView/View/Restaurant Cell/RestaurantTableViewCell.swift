@@ -15,7 +15,10 @@ open class RestaurantTableViewCell: UITableViewCell {
   @IBOutlet public weak var ratingsLabel: UILabel?
   
   public func configureWith(_ restaurantViewModel: RestaurantViewModel) {
-    nameLabel?.text = restaurantViewModel.cityText
+    if let thumb = restaurantViewModel.thumbURLString {
+      thumbImageView?.loadImageUsingUrlString(urlString: thumb)
+    }
+    nameLabel?.text = restaurantViewModel.nameText
     ratingsLabel?.text = restaurantViewModel.ratingsText
   }
   

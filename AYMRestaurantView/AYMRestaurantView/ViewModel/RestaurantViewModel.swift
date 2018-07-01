@@ -10,6 +10,9 @@ import Foundation
 
 public struct RestaurantViewModel {
   var restaurant: Restaurant
+  var thumbURLString: String? {
+    return restaurant.details?.thumb
+  }
   var nameText: String? {
     return restaurant.details?.name
   }
