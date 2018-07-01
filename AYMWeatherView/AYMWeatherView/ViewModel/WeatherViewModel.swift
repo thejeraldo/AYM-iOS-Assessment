@@ -81,12 +81,12 @@ struct DailyForecastViewModel {
     return "--"
   }
   var maxTempString: String {
-    let maxTemp = forecast.temp_max ?? 0.0
+    let maxTemp = forecast.tempMax ?? 0.0
     let maxTempCelsius = Int(maxTemp - 273.15)
     return "\(maxTempCelsius)°"
   }
   var minTempString: String {
-    let minTemp = forecast.temp_min ?? 0.0
+    let minTemp = forecast.tempMin ?? 0.0
     let minTempCelsius = Int(minTemp - 273.15)
     return "\(minTempCelsius)°"
   }

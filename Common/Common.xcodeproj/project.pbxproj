@@ -10,6 +10,8 @@
 		F857EE1B20E8B0A30055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE1120E8B0A30055E1F9 /* Common.framework */; };
 		F857EE2020E8B0A30055E1F9 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE1F20E8B0A30055E1F9 /* CommonTests.swift */; };
 		F857EE2220E8B0A30055E1F9 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F857EE1420E8B0A30055E1F9 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F857EE3420E8B1240055E1F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE3220E8B1240055E1F9 /* NetworkClient.swift */; };
+		F857EE3520E8B1240055E1F9 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		F857EE1A20E8B0A30055E1F9 /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F857EE1F20E8B0A30055E1F9 /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
 		F857EE2120E8B0A30055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F857EE3220E8B1240055E1F9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		F857EE1320E8B0A30055E1F9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F857EE3120E8B1240055E1F9 /* Networking */,
 				F857EE1420E8B0A30055E1F9 /* Common.h */,
 				F857EE1520E8B0A30055E1F9 /* Info.plist */,
 			);
@@ -84,6 +89,15 @@
 				F857EE2120E8B0A30055E1F9 /* Info.plist */,
 			);
 			path = CommonTests;
+			sourceTree = "<group>";
+		};
+		F857EE3120E8B1240055E1F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F857EE3220E8B1240055E1F9 /* NetworkClient.swift */,
+				F857EE3320E8B1240055E1F9 /* EndPointProtocol.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F857EE3520E8B1240055E1F9 /* EndPointProtocol.swift in Sources */,
+				F857EE3420E8B1240055E1F9 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +407,7 @@
 		F857EE2920E8B0A30055E1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
 				INFOPLIST_FILE = CommonTests/Info.plist;
@@ -409,6 +426,7 @@
 		F857EE2A20E8B0A30055E1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VJF35UZSF;
 				INFOPLIST_FILE = CommonTests/Info.plist;

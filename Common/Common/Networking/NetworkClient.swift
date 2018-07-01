@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
   case GET    = "GET"
   case POST   = "POST"
   case PUT    = "PUT"
@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 }
 
 public struct NetworkClient {
-  static func fetch<T: Codable>(url: URL, method: HTTPMethod, parameters: [String: String]?, responseType: T.Type, completion: @escaping (_ t: T?, _ error: Error?) -> ()) {
+  public static func fetch<T: Codable>(url: URL, method: HTTPMethod, parameters: [String: String]?, headers: [String: String]?, responseType: T.Type, completion: @escaping (_ t: T?, _ error: Error?) -> ()) {
     var urlComponents = URLComponents(string: url.absoluteString)
     var queryItems = [URLQueryItem]()
     if let _ = parameters {
@@ -38,7 +38,13 @@ public struct NetworkClient {
       return
     }
     
-    let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    var urlRequest = URLRequest(url: url)
+    if let _ = headers {
+      for (key, value) in headers! {
+        urlRequest.addValue(value, forHTTPHeaderField: key)
+      }
+    }
+    let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
       guard error == nil else {
         print("Network client error: \(error!)")
         DispatchQueue.main.async {
@@ -57,6 +63,7 @@ public struct NetworkClient {
       
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .secondsSince1970
+      decoder.keyDecodingStrategy = .convertFromSnakeCase
       let result = try? decoder.decode(responseType.self, from: data)
       DispatchQueue.main.async {
         completion(result, nil)

@@ -10,10 +10,9 @@
 		F857EDA220E4E0770055E1F9 /* AYMRestaurantView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857ED9820E4E0770055E1F9 /* AYMRestaurantView.framework */; };
 		F857EDA720E4E0770055E1F9 /* AYMRestaurantViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDA620E4E0770055E1F9 /* AYMRestaurantViewTests.swift */; };
 		F857EDA920E4E0770055E1F9 /* AYMRestaurantView.h in Headers */ = {isa = PBXBuildFile; fileRef = F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F857EDB920E4E6310055E1F9 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDB720E4E6310055E1F9 /* EndPointProtocol.swift */; };
-		F857EDBA20E4E6310055E1F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDB820E4E6310055E1F9 /* NetworkClient.swift */; };
 		F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */; };
 		F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */; };
+		F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857EE2C20E8B0E10055E1F9 /* Common.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +32,9 @@
 		F857EDA120E4E0770055E1F9 /* AYMRestaurantViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AYMRestaurantViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F857EDA620E4E0770055E1F9 /* AYMRestaurantViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYMRestaurantViewTests.swift; sourceTree = "<group>"; };
 		F857EDA820E4E0770055E1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F857EDB720E4E6310055E1F9 /* EndPointProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
-		F857EDB820E4E6310055E1F9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		F857EDBB20E4E71C0055E1F9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F857EDBF20E4F9110055E1F9 /* RestaurantAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPI.swift; sourceTree = "<group>"; };
+		F857EE2C20E8B0E10055E1F9 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F857EE2D20E8B0E10055E1F9 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +63,7 @@
 				F857ED9A20E4E0770055E1F9 /* AYMRestaurantView */,
 				F857EDA520E4E0770055E1F9 /* AYMRestaurantViewTests */,
 				F857ED9920E4E0770055E1F9 /* Products */,
+				F857EE2B20E8B0E10055E1F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				F857EDB320E4E1470055E1F9 /* Model */,
-				F857EDB620E4E1470055E1F9 /* Networking */,
 				F857EDB420E4E1470055E1F9 /* Restaurants API */,
 				F857EDB520E4E1470055E1F9 /* ViewModel */,
 				F857ED9B20E4E0770055E1F9 /* AYMRestaurantView.h */,
@@ -121,13 +120,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F857EDB620E4E1470055E1F9 /* Networking */ = {
+		F857EE2B20E8B0E10055E1F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDB720E4E6310055E1F9 /* EndPointProtocol.swift */,
-				F857EDB820E4E6310055E1F9 /* NetworkClient.swift */,
+				F857EE2C20E8B0E10055E1F9 /* Common.framework */,
 			);
-			path = Networking;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F857EDB920E4E6310055E1F9 /* EndPointProtocol.swift in Sources */,
 				F857EDC020E4F9110055E1F9 /* RestaurantAPI.swift in Sources */,
-				F857EDBA20E4E6310055E1F9 /* NetworkClient.swift in Sources */,
 				F857EDBC20E4E71C0055E1F9 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
