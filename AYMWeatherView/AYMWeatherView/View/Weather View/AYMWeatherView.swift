@@ -33,7 +33,6 @@ open class AYMWeatherView: UIView {
   
   // MARK: - Public Properties
   
-  
   /// Provide an OpenWeatherMap.org API Key.
   open var apiKey: String
   public var fiveDayForecast = [DailyForecast]()
@@ -120,6 +119,8 @@ open class AYMWeatherView: UIView {
     
     setDefaultValues()
   }
+  
+  // MARK: - Public Methods
   
   /// Requests for the user's location.
   /// Will download weather from the API after getting the user's coordinates.
