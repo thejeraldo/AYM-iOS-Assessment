@@ -31,8 +31,8 @@ class AYMRestaurantViewTests: XCTestCase {
   func testGeocodeAPI() {
     let expectation = XCTestExpectation(description: "Geocode API")
     
-    let api = RestaurantAPI(apiKey: apiKey)
-    api.geocode(coord: coord) { (geocode, error) in
+    let api = RestaurantAPI()
+    api.geocode(apiKey: apiKey, coord: coord) { (geocode, error) in
       guard error == nil else {
         return
       }
@@ -46,8 +46,8 @@ class AYMRestaurantViewTests: XCTestCase {
   func testSearchAPI() {
     let expectation = XCTestExpectation(description: "Search API")
     
-    let api = RestaurantAPI(apiKey: apiKey)
-    api.search(coord: coord, entityId: entityId, entityType: entityType) { (searchResults, error) in
+    let api = RestaurantAPI()
+    api.search(apiKey: apiKey, coord: coord, entityId: entityId, entityType: entityType) { (searchResults, error) in
       guard error == nil else {
         return
       }

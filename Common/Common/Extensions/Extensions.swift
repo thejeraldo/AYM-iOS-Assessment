@@ -8,6 +8,35 @@
 
 import Foundation
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+public extension UIImageView {
+  func loadImageUsingUrlString(urlString: String) {
+    guard let url = URL(string: urlString) else {
+      return
+    }
+    
+    if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
+      self.image = imageFromCache
+      return
+    } else {
+      image = nil
+    }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, error) in
+      guard error == nil else {
+        print("Error downloading image. \(error!)")
+        return
+      }
+      DispatchQueue.main.async {
+        let imageToCache = UIImage(data: data!)
+        imageCache.setObject(imageCache, forKey: urlString as AnyObject)
+        self.image = imageToCache
+      }
+    }.resume()
+  }
+}
+
 public extension Array {
   public func chunks(_ chunkSize: Int) -> [[Element]] {
     return stride(from: 0, to: self.count, by: chunkSize).map {
@@ -23,6 +52,14 @@ public extension String {
   
   public mutating func capitalizeFirstLetter() {
     self = self.capitalizingFirstLetter()
+  }
+}
+
+public extension Range where Bound == String.Index {
+  var nsRange:NSRange {
+    return NSRange(location: self.lowerBound.encodedOffset,
+                   length: self.upperBound.encodedOffset -
+                    self.lowerBound.encodedOffset)
   }
 }
 

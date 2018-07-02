@@ -8,10 +8,9 @@
 
 import Foundation
 import CoreLocation
+import Common
 
 struct RestaurantAPI: EndPointProtocol {
-  var apiKey: String
-  
   var baseURL: URL {
     return URL(string: "https://developers.zomato.com/api/v2.1")!
   }
@@ -28,7 +27,7 @@ struct RestaurantAPI: EndPointProtocol {
 extension RestaurantAPI {
   typealias geoCodeCompletion = (_ geocode: GeoCode?, _ error: Error?) -> ()
   typealias searchCompletion = (_ searchResults: RestaurantSearch?, _ error: Error?) -> ()
-  func geocode(coord: CLLocationCoordinate2D, completion: @escaping geoCodeCompletion) {
+  func geocode(apiKey: String, coord: CLLocationCoordinate2D, completion: @escaping geoCodeCompletion) {
     let url = baseURL.appendingPathComponent("geocode")
     let params: [String: String] = [
       "lat": "\(coord.latitude)",
@@ -47,7 +46,7 @@ extension RestaurantAPI {
     }
   }
   
-  func search(coord: CLLocationCoordinate2D, entityId: String, entityType: String, completion: @escaping searchCompletion) {
+  func search(apiKey: String, coord: CLLocationCoordinate2D, entityId: String, entityType: String, completion: @escaping searchCompletion) {
     let url = baseURL.appendingPathComponent("search")
     let params: [String: String] = [
       "lat": "\(coord.latitude)",
