@@ -31,14 +31,16 @@ class WeatherViewController: UIViewController, AYMWeatherViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
-    weatherView.downloadWeatherForCurrentLocation()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: true)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    weatherView.downloadWeatherForCurrentLocation()
   }
   
   override func didReceiveMemoryWarning() {
@@ -51,15 +53,18 @@ class WeatherViewController: UIViewController, AYMWeatherViewDelegate {
   }
   
   func weatherViewDidStartDownloadingData() {
-    
+    weatherView.endRefreshing()
+    SVProgressHUD.show()
   }
   
   func weatherViewDidFinishDownloadingData() {
-    
+    weatherView.endRefreshing()
+    SVProgressHUD.dismiss()
   }
   
   func weatherViewDidFailDownloadDataWithError(_ error: Error) {
-    
+    weatherView.endRefreshing()
+    SVProgressHUD.showError(withStatus: "Something went wrong.")
   }
   
   @IBAction func showRestaurantsVC() {

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    setupSVProgressHUD()
     return true
   }
 
@@ -42,5 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
 
+}
+
+extension AppDelegate {
+  func setupSVProgressHUD() {
+    SVProgressHUD.setDefaultMaskType(.clear)
+    SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+  }
 }
 

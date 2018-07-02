@@ -58,14 +58,17 @@ extension RestaurantsViewController: AYMRestaurantViewDelegate {
   }
   
   func restaurantViewDidStartDownloadingData() {
-    
+    restaurantView.endRefreshing()
+    SVProgressHUD.show()
   }
   
   func restaurantViewDidFinishDownloadingData() {
-    
+    restaurantView.endRefreshing()
+    SVProgressHUD.dismiss()
   }
   
   func restaurantViewDidFailDownloadDataWithError(_ error: Error) {
-    
+    restaurantView.endRefreshing()
+    SVProgressHUD.showError(withStatus: "Something went wrong.")
   }
 }
