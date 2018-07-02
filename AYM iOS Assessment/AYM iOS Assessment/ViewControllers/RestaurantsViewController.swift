@@ -11,19 +11,22 @@ import AYMRestaurantView
 
 class RestaurantsViewController: UIViewController {
   
+  // MARK: - Properties
+  
   @IBOutlet weak var restaurantView: AYMRestaurantView! {
     didSet {
       restaurantView.zomatoAPIKey = "020541769015d08a109afa60dde2703a"
+      restaurantView.delegate = self
     }
   }
+  
+  // MARK: - View Controller Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
     title = "Nearby Restaurants"
-    
-    restaurantView.downloadRestaurants()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +40,32 @@ class RestaurantsViewController: UIViewController {
     navigationController?.setNavigationBarHidden(false, animated: true)
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    restaurantView.downloadRestaurants()
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+}
+
+
+extension RestaurantsViewController: AYMRestaurantViewDelegate {
+  func restaurantViewDidPullDownToRefresh() {
+    restaurantView.downloadRestaurants()
+  }
+  
+  func restaurantViewDidStartDownloadingData() {
+    
+  }
+  
+  func restaurantViewDidFinishDownloadingData() {
+    
+  }
+  
+  func restaurantViewDidFailDownloadDataWithError(_ error: Error) {
+    
   }
 }

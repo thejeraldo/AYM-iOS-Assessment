@@ -10,18 +10,43 @@ import UIKit
 import CoreLocation
 import Common
 
+public protocol AYMRestaurantViewDelegate: class {
+  // Required
+  func restaurantViewDidStartDownloadingData()
+  func restaurantViewDidFinishDownloadingData()
+  func restaurantViewDidFailDownloadDataWithError(_ error: Error)
+  // Optional
+  func restaurantViewDidPullDownToRefresh()
+  func restaurantViewDidSelect(_ item: Restaurant, at indexPath: IndexPath)
+}
+
+public extension AYMRestaurantViewDelegate {
+  func restaurantViewDidPullDownToRefresh() {}
+  func restaurantViewDidSelect(_ item: Restaurant, at indexPath: IndexPath) {}
+}
+
 open class AYMRestaurantView: UIView {
   
   // MARK: - Public Properties
   
   public var zomatoAPIKey: String
   public var restaurants = [Restaurant]()
+  public weak var delegate: AYMRestaurantViewDelegate?
   
   @IBOutlet public weak var tableView: UITableView? {
     didSet {
       tableView?.dataSource = self
       tableView?.delegate = self
       tableView?.tableFooterView = UIView()
+      // Refresh Control
+      let refreshControl = UIRefreshControl()
+      let attribs: [NSAttributedStringKey: Any] = [
+        NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10, weight: .regular),
+        NSAttributedStringKey.foregroundColor: UIColor.gray
+      ]
+      refreshControl.attributedTitle = NSAttributedString(string: "↓ Pull Down To Refresh", attributes: attribs)
+      refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+      tableView?.refreshControl = refreshControl
     }
   }
   
@@ -33,6 +58,8 @@ open class AYMRestaurantView: UIView {
     return locationManager
   }()
   fileprivate var contentView: UIView?
+  
+  // MARK: - Initialization
   
   public init(zomatoAPIKey: String) {
     self.zomatoAPIKey = zomatoAPIKey
@@ -54,6 +81,24 @@ open class AYMRestaurantView: UIView {
     tableView?.register(cellNib, forCellReuseIdentifier: "restaurantCell")
   }
   
+  private func loadViewFromNib() -> UIView? {
+    let bundle = Bundle(for: type(of: self))
+    let nib = UINib(nibName: "AYMRestaurantView", bundle: bundle)
+    return nib.instantiate(withOwner: self, options: nil).first as? UIView
+  }
+  
+  // MARK: - Public Methods
+  
+  /// Tells the delegate that the user pulled down to refresh.
+  @objc open func refresh() {
+    self.delegate?.restaurantViewDidPullDownToRefresh()
+  }
+  
+  /// Ends refreshing.
+  open func endRefreshing() {
+    self.tableView?.refreshControl?.endRefreshing()
+  }
+  
   open func downloadRestaurants() {
     let status = CLLocationManager.authorizationStatus()
     if status == .notDetermined {
@@ -68,12 +113,6 @@ open class AYMRestaurantView: UIView {
     if CLLocationManager.locationServicesEnabled() == false {
       showEnableLocationServiceAlert()
     }
-  }
-  
-  private func loadViewFromNib() -> UIView? {
-    let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: "AYMRestaurantView", bundle: bundle)
-    return nib.instantiate(withOwner: self, options: nil).first as? UIView
   }
 }
 
@@ -131,6 +170,7 @@ extension AYMRestaurantView {
             self.tableView?.reloadData()
           }
           
+          self.endRefreshing()
           completion(nil)
         })
       }
@@ -157,22 +197,14 @@ extension AYMRestaurantView: CLLocationManagerDelegate {
     if fabs(cachedBefore!) < 60.0 {
       let coord = location?.coordinate
       manager.stopUpdatingLocation()
-      let geocoder = CLGeocoder()
-      geocoder.reverseGeocodeLocation(location!) { (placemarks, error) in
+      self.downloadRestaurants(coord: coord!, completion: { (error) in
         guard error == nil else {
-          print("Reverse geocoding location error. \(error!)")
+          self.delegate?.restaurantViewDidFailDownloadDataWithError(error!)
           return
         }
-        if let placemark = placemarks?.last {
-          self.downloadRestaurants(coord: coord!, completion: { (error) in
-            guard error == nil else {
-              // call delegate
-              return
-            }
-            // call delegate
-          })
-        }
-      }
+        
+        self.delegate?.restaurantViewDidFinishDownloadingData()
+      })
     }
   }
 }
@@ -181,7 +213,7 @@ extension AYMRestaurantView {
   private func showEnableLocationServiceAlert() {
     let alert = UIAlertController(title: "Turn on Location Services for your iPhone", message: "1. Open the Settings app\n2. Select Privacy\n 3. Select Loation Services\n 4. Turn on Location Services", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-      
+      self.endRefreshing()
     }))
     alert.presentInOwnWindow(animated: true, completion: nil)
   }
@@ -189,7 +221,7 @@ extension AYMRestaurantView {
   private func showAppSettingsAlert() {
     let alert = UIAlertController(title: "Turn on your location settings to continue", message: "1. Select Location\n2. Tap on Always or While Using", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Go To Settings", style: .default, handler: { action in
-      
+      self.endRefreshing()
       let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)!
       UIApplication.shared.open(settingsUrl)
     }))
