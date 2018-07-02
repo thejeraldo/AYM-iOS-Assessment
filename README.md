@@ -1,6 +1,5 @@
 # AYM Commerce iOS Assessment
----
-
+-
 This is a sample project demonstrating the use of two reusable components -- AYMWeatherView and AYMRestaurantView.
 
 ### AYMWeatherView
