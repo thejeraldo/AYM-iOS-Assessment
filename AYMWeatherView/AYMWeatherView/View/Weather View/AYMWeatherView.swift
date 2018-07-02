@@ -248,6 +248,9 @@ extension AYMWeatherView: UICollectionViewDelegate {
 extension AYMWeatherView: CLLocationManagerDelegate {
   public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     print("location manager did change authorization status.")
+    if status == .authorizedAlways || status == .authorizedWhenInUse {
+      self.downloadWeatherForCurrentLocation()
+    }
   }
   
   public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
