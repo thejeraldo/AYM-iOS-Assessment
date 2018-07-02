@@ -100,6 +100,7 @@ open class AYMRestaurantView: UIView {
   }
   
   open func downloadRestaurants() {
+    self.delegate?.restaurantViewDidStartDownloadingData()
     let status = CLLocationManager.authorizationStatus()
     if status == .notDetermined {
       locationManager.requestAlwaysAuthorization()
@@ -187,6 +188,7 @@ extension AYMRestaurantView: CLLocationManagerDelegate {
   
   public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     print("location manager did fail with error \(error).")
+    self.delegate?.restaurantViewDidFailDownloadDataWithError(error)
   }
   
   public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -226,7 +228,7 @@ extension AYMRestaurantView {
       UIApplication.shared.open(settingsUrl)
     }))
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-      
+      self.endRefreshing()
     }))
     alert.presentInOwnWindow(animated: true, completion: nil)
   }

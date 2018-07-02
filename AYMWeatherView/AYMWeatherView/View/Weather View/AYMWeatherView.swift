@@ -268,6 +268,7 @@ extension AYMWeatherView: CLLocationManagerDelegate {
       geocoder.reverseGeocodeLocation(location!) { (placemarks, error) in
         guard error == nil else {
           print("Reverse geocoding location error. \(error!)")
+          self.delegate?.weatherViewDidFailDownloadDataWithError(error!)
           return
         }
         if let placemark = placemarks?.last {
