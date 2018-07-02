@@ -1,5 +1,8 @@
 # AYM Commerce iOS Assessment
--
+---
+
+![gif](https://raw.githubusercontent.com/thejeraldo/AYM-iOS-Assessment/master/Screenshots/app.gif "iPhone")
+
 This is a sample project demonstrating the use of two reusable components -- AYMWeatherView and AYMRestaurantView.
 
 ### AYMWeatherView
