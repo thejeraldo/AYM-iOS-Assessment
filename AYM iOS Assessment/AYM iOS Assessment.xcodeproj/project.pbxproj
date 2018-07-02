@@ -22,6 +22,12 @@
 		F8F6D86320E8E4A900A6FD8E /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D86220E8E4A800A6FD8E /* RestaurantsViewController.swift */; };
 		F8F6D86520E8E53E00A6FD8E /* AYMRestaurantView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */; };
 		F8F6D86620E8E53E00A6FD8E /* AYMRestaurantView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8F6D8A320E9E3A300A6FD8E /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D89920E9E3A200A6FD8E /* SVRadialGradientLayer.m */; };
+		F8F6D8A420E9E3A300A6FD8E /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D89C20E9E3A200A6FD8E /* SVProgressAnimatedView.m */; };
+		F8F6D8A520E9E3A300A6FD8E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D89F20E9E3A200A6FD8E /* SVProgressHUD.m */; };
+		F8F6D8A620E9E3A300A6FD8E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F6D8A020E9E3A200A6FD8E /* SVIndefiniteAnimatedView.m */; };
+		F8F6D8A720E9E3A300A6FD8E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8F6D8A120E9E3A200A6FD8E /* SVProgressHUD.bundle */; };
+		F8F6D8AA20E9E3E000A6FD8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F6D8A920E9E3DF00A6FD8E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,18 @@
 		F8F6D85D20E8E12400A6FD8E /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F6D86220E8E4A800A6FD8E /* RestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 		F8F6D86420E8E53E00A6FD8E /* AYMRestaurantView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AYMRestaurantView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F6D89920E9E3A200A6FD8E /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		F8F6D89A20E9E3A200A6FD8E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		F8F6D89B20E9E3A200A6FD8E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		F8F6D89C20E9E3A200A6FD8E /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		F8F6D89D20E9E3A200A6FD8E /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		F8F6D89E20E9E3A200A6FD8E /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		F8F6D89F20E9E3A200A6FD8E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		F8F6D8A020E9E3A200A6FD8E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		F8F6D8A120E9E3A200A6FD8E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		F8F6D8A220E9E3A200A6FD8E /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		F8F6D8A920E9E3DF00A6FD8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F8F6D8AC20E9E48F00A6FD8E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D8AA20E9E3E000A6FD8E /* QuartzCore.framework in Frameworks */,
 				F8F6D85B20E8E0E500A6FD8E /* AYMWeatherView.framework in Frameworks */,
 				F8F6D85E20E8E12400A6FD8E /* Common.framework in Frameworks */,
 				F8F6D86520E8E53E00A6FD8E /* AYMRestaurantView.framework in Frameworks */,
@@ -116,6 +135,7 @@
 				F85D4D0F20E3FE5800570C99 /* AYM iOS AssessmentTests */,
 				F85D4D1A20E3FE5800570C99 /* AYM iOS AssessmentUITests */,
 				F85D4CF920E3FE5300570C99 /* Products */,
+				F8F6D8A820E9E3DF00A6FD8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,13 +152,15 @@
 		F85D4CFA20E3FE5300570C99 /* AYM iOS Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				F857EDBD20E4F1020055E1F9 /* Dubai.gpx */,
-				F85D4D5620E4147600570C99 /* ViewControllers */,
+				F8F6D89420E9E27B00A6FD8E /* Frameworks */,
 				F85D4CFB20E3FE5300570C99 /* AppDelegate.swift */,
+				F8F6D89320E9E26000A6FD8E /* Resources */,
+				F85D4D5620E4147600570C99 /* ViewControllers */,
 				F85D4CFF20E3FE5300570C99 /* Main.storyboard */,
-				F85D4D0220E3FE5700570C99 /* Assets.xcassets */,
 				F85D4D0420E3FE5700570C99 /* LaunchScreen.storyboard */,
+				F85D4D0220E3FE5700570C99 /* Assets.xcassets */,
 				F85D4D0720E3FE5700570C99 /* Info.plist */,
+				F8F6D8AC20E9E48F00A6FD8E /* Bridging-Header.h */,
 			);
 			path = "AYM iOS Assessment";
 			sourceTree = "<group>";
@@ -168,6 +190,47 @@
 				F85D4D5720E414D100570C99 /* WeatherViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8F6D89320E9E26000A6FD8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F857EDBD20E4F1020055E1F9 /* Dubai.gpx */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8F6D89420E9E27B00A6FD8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D89820E9E3A200A6FD8E /* SVProgressHUD */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F6D89820E9E3A200A6FD8E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D89920E9E3A200A6FD8E /* SVRadialGradientLayer.m */,
+				F8F6D89A20E9E3A200A6FD8E /* SVIndefiniteAnimatedView.h */,
+				F8F6D89B20E9E3A200A6FD8E /* SVProgressHUD.h */,
+				F8F6D89C20E9E3A200A6FD8E /* SVProgressAnimatedView.m */,
+				F8F6D89D20E9E3A200A6FD8E /* SVProgressHUD-Prefix.pch */,
+				F8F6D89E20E9E3A200A6FD8E /* SVRadialGradientLayer.h */,
+				F8F6D89F20E9E3A200A6FD8E /* SVProgressHUD.m */,
+				F8F6D8A020E9E3A200A6FD8E /* SVIndefiniteAnimatedView.m */,
+				F8F6D8A120E9E3A200A6FD8E /* SVProgressHUD.bundle */,
+				F8F6D8A220E9E3A200A6FD8E /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		F8F6D8A820E9E3DF00A6FD8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8F6D8A920E9E3DF00A6FD8E /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6D8A720E9E3A300A6FD8E /* SVProgressHUD.bundle in Resources */,
 				F85D4D0620E3FE5700570C99 /* LaunchScreen.storyboard in Resources */,
 				F85D4D0320E3FE5700570C99 /* Assets.xcassets in Resources */,
 				F85D4D0120E3FE5300570C99 /* Main.storyboard in Resources */,
@@ -304,8 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85D4CFC20E3FE5300570C99 /* AppDelegate.swift in Sources */,
+				F8F6D8A420E9E3A300A6FD8E /* SVProgressAnimatedView.m in Sources */,
 				F8F6D86320E8E4A900A6FD8E /* RestaurantsViewController.swift in Sources */,
 				F85D4D5820E414D100570C99 /* WeatherViewController.swift in Sources */,
+				F8F6D8A320E9E3A300A6FD8E /* SVRadialGradientLayer.m in Sources */,
+				F8F6D8A620E9E3A300A6FD8E /* SVIndefiniteAnimatedView.m in Sources */,
+				F8F6D8A520E9E3A300A6FD8E /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thejeraldo.AYM-iOS-Assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeraldo/iOS/AYM iOS Assessment/AYM iOS Assessment/AYM iOS Assessment/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -507,6 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thejeraldo.AYM-iOS-Assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeraldo/iOS/AYM iOS Assessment/AYM iOS Assessment/AYM iOS Assessment/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
